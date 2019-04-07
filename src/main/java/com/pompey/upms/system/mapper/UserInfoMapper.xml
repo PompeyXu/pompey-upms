@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pompey.upms.system.mapper.IUserInfoMapper">
+	
+	<resultMap type="com.pompey.upms.system.bean.UserInfo" id="BaseResultMap"></resultMap>
+	
+	<select id="getUserInfoById" resultMap="BaseResultMap">
+		select id, login_account, user_name, password from sys_user_info where id=${id}
+	</select>
+	
+	<insert id="insert" parameterType="com.pompey.upms.system.bean.UserInfo">
+		insert into sys_user_info(id,login_account,user_name,password) values(#{id},#{loginAccount},#{userName},#{password})
+	</insert>
+	
+</mapper>

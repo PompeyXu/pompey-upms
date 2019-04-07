@@ -1,1 +1,36 @@
+server:
+  port: 80
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
+mybatis:
+  mapper-locations: classpath*:com/pompey/upms/**/*Mapper.xml
+  type-aliases-package: com.pompey.upms.**.bean
+  configuration:
+    ##驼峰命名规范
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.pompey.upms: debug
+
+########## 通用Mapper ##########
+mapper:
+  identity: mysql
+  mappers: tk.mybatis.mapper.common.BaseMapper
+  # 设置 insert 和 update 中，是否判断字符串类型!=''
+  not-empty: true
+  # 枚举按简单类型处理
+  enum-as-simple-type: true
+  
+########## 分页插件 ##########
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: false
+  support-methods-arguments: true
+  
+  
