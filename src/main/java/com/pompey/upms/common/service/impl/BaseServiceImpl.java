@@ -30,7 +30,7 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
 	@Transactional
 	@Override
 	public int delete(int id) {
-		return baseMapper.deleteByPrimaryKey(id);
+		return baseMapper.delete(baseMapper.selectByPrimaryKey(id));
 	}
 
 	

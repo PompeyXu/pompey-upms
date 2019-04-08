@@ -1,5 +1,8 @@
 package com.pompey.upms.system.bean;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.Table;
 
 /**
@@ -10,8 +13,10 @@ import javax.persistence.Table;
  *
  */
 @Table(name="sys_user_info")
-public class UserInfo {
-
+public class DemoVo implements java.io.Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * 用户id
 	 */
@@ -31,6 +36,9 @@ public class UserInfo {
 	 */
 	private String password;
 	
+	private LocalDateTime updateDateTime;
+	
+	private Date crateDateTime;
 	
 	public int getId() {
 		return id;
@@ -55,6 +63,23 @@ public class UserInfo {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public LocalDateTime getUpdateDateTime() {
+		return updateDateTime;
+	}
+	public void setUpdateDateTime(LocalDateTime updateDateTime) {
+		this.updateDateTime = updateDateTime;
+	}
+	
+	public Date getCrateDateTime() {
+		return crateDateTime;
+	}
+	public void setCrateDateTime(Date crateDateTime) {
+		this.crateDateTime = crateDateTime;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	@Override
 	public String toString() {

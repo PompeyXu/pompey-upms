@@ -7,15 +7,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.pompey.upms.system.bean.UserInfo;
-import com.pompey.upms.system.service.IUserInfoService;
+import com.pompey.upms.system.bean.DemoVo;
+import com.pompey.upms.system.service.IDemoService;
 
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserInfoTest {
 
 	@Autowired
-	private IUserInfoService userInfoService;
+	private IDemoService userInfoService;
 	
 	@Test
 	public void testGetUserInfoById() {
@@ -24,7 +24,7 @@ public class UserInfoTest {
 	
 	@Test
 	public void testInsert() {
-		UserInfo info = new UserInfo();
+		DemoVo info = new DemoVo();
 		info.setId(1);
 		info.setLoginAccount("zhangsan");
 		info.setUserName("张三");
