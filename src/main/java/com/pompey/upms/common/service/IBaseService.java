@@ -11,20 +11,35 @@ package com.pompey.upms.common.service;
 public interface IBaseService<T> {
 
 	/**
-	 * 
-	 * @Title: getById
-	 * @Description: 通過id查詢
-	 * @param: @param id
-	 * @param: @return
-	 * @return: T
+	 * 通過id查詢
+	 * @param id 主键id
+	 * @return: T 返回对象
 	 * @throws
 	 */
 	public T getById(int id);
 	
+	/**
+	 * 更新方法
+	 * @param t 参数对象
+	 * @return int 返回类型
+	 * @throws
+	 */
 	public int update(T t);
 	
+	/**
+	 * 保存方法
+	 * @param t 参数对象
+	 * @return int
+	 * @throws
+	 */
 	public int save(T t);
 	
+	/**
+	 * 删除方法
+	 * @param id 主键
+	 * @return int
+	 * @throws
+	 */
 	public int delete(int id);
 	
 }

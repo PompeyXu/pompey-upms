@@ -8,7 +8,7 @@ import javax.persistence.Table;
 /**
  * @ClassName: UserInfo
  * @Description: 用户表
- * @author Pompey
+ * @author PompeyXu
  * @date: 2019-04-07 17:37
  *
  */

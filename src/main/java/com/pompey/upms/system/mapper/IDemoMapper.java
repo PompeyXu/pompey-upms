@@ -7,10 +7,28 @@ import com.pompey.upms.system.bean.DemoVo;
 
 import tk.mybatis.mapper.common.BaseMapper;
 
+/**
+ * @ClassName: IDemoMapper
+ * @Description: demoMapper 
+ * @author PompeyXu
+ * @date: 2019-04-09 21:38
+ *
+ */
 @Mapper
 public interface IDemoMapper extends BaseMapper<DemoVo>{
 
+	/**
+	 * 根据主键获取用户信息
+	 * @param id 主键
+	 * @return DemoVo
+	 * @throws
+	 */
 	public DemoVo getUserInfoById(@Param("id") int id);
 	
+	/**
+	 * 插入数据
+	 * @param userInfo 用户数据
+	 * @return
+	 */
 	public int insert(DemoVo userInfo);
 }

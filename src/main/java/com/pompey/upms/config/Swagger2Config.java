@@ -10,6 +10,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+/**
+ * @ClassName: Swagger2Config
+ * @Description: swagger配置类
+ * @author PompeyXu
+ * @date: 2019-04-09 21:38
+ *
+ */
 @Configuration
 public class Swagger2Config {
 	@Bean

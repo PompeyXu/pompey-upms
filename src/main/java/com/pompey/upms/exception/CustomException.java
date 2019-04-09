@@ -1,5 +1,12 @@
 package com.pompey.upms.exception;
 
+/**
+ * @ClassName: CustomException
+ * @Description: 定制异常处理类
+ * @author PompeyXu
+ * @date: 2019-04-09 21:40
+ *
+ */
 public class CustomException extends RuntimeException {
 	private static final long serialVersionUID = 4564124491192825748L;
 

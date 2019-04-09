@@ -5,6 +5,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pompey.upms.common.service.IBaseService;
 import tk.mybatis.mapper.common.BaseMapper;
 
+/**
+ * @ClassName: BaseServiceImpl
+ * @Description: 基础service实现 
+ * @author PompeyXu
+ * @date: 2019-04-09 21:39
+ *
+ * @param <T>
+ */
 public class BaseServiceImpl<T> implements IBaseService<T> {
 
 	@Autowired
@@ -15,19 +23,19 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
 		return baseMapper.selectByPrimaryKey(id);
 	}
 
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int update(T t) {
 		return baseMapper.updateByPrimaryKeySelective(t);
 	}
 
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int save(T t) {
 		return baseMapper.insert(t);
 	}
 
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int delete(int id) {
 		return baseMapper.delete(baseMapper.selectByPrimaryKey(id));

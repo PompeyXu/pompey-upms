@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pompey.upms.exception.CustomException;
 import com.pompey.upms.system.bean.DemoVo;
 
+/**
+ * @ClassName: DemoController
+ * @Description: 测试controller 
+ * @author PompeyXu
+ * @date: 2019-04-09 21:38
+ *
+ */
 @RestController
 public class DemoController {
 
