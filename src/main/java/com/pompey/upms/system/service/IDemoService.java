@@ -2,7 +2,7 @@ package com.pompey.upms.system.service;
 
 import com.github.pagehelper.PageInfo;
 import com.pompey.upms.common.service.IBaseService;
-import com.pompey.upms.system.bean.DemoVo;
+import com.pompey.upms.system.model.DemoVo;
 
 /**
  * @ClassName: IDemoService

@@ -12,11 +12,11 @@ public interface IBaseService<T> {
 
 	/**
 	 * 通過id查詢
-	 * @param id 主键id
+	 * @param resourceId 主键id
 	 * @return: T 返回对象
 	 * @throws
 	 */
-	public T getById(int id);
+	public T getById(String resourceId);
 	
 	/**
 	 * 更新方法
@@ -40,6 +40,6 @@ public interface IBaseService<T> {
 	 * @return int
 	 * @throws
 	 */
-	public int delete(int id);
+	public int delete(String resourceId);
 	
 }

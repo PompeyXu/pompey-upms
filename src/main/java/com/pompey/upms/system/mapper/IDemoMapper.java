@@ -3,7 +3,7 @@ package com.pompey.upms.system.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.pompey.upms.system.bean.DemoVo;
+import com.pompey.upms.system.model.DemoVo;
 
 import tk.mybatis.mapper.common.BaseMapper;
 
@@ -23,7 +23,7 @@ public interface IDemoMapper extends BaseMapper<DemoVo>{
 	 * @return DemoVo
 	 * @throws
 	 */
-	public DemoVo getUserInfoById(@Param("id") int id);
+	public DemoVo getUserInfoById(@Param("resourceId") int resourceId);
 	
 	/**
 	 * 插入数据

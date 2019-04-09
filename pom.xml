@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <swagger2.version>2.9.2</swagger2.version>
+        <druid.version>1.1.16</druid.version>
     </properties>
 
     <dependencies>
@@ -54,11 +55,18 @@
 		    <version>2.1.5</version>
 		</dependency>
 		
-		<!-- 分頁插件 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md -->
+		<!-- 分页插件 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md -->
 		<dependency>
 		    <groupId>com.github.pagehelper</groupId>
 		    <artifactId>pagehelper-spring-boot-starter</artifactId>
 		    <version>1.2.3</version>
+		</dependency>
+		
+		<!-- alibaba的druid数据库连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid.version}</version>
 		</dependency>
 		
 		<!-- swagger2配置 -->

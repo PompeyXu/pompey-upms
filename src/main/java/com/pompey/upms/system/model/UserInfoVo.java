@@ -1,4 +1,4 @@
-package com.pompey.upms.system.bean;
+package com.pompey.upms.system.model;
 
 import java.util.Date;
 

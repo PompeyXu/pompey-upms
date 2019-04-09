@@ -19,8 +19,8 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
 	private BaseMapper<T> baseMapper;
 	
 	@Override
-	public T getById(int id) {
-		return baseMapper.selectByPrimaryKey(id);
+	public T getById(String resourceId) {
+		return baseMapper.selectByPrimaryKey(resourceId);
 	}
 
 	@Transactional(rollbackFor = Exception.class)
@@ -37,8 +37,8 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public int delete(int id) {
-		return baseMapper.delete(baseMapper.selectByPrimaryKey(id));
+	public int delete(String resourceId) {
+		return baseMapper.delete(baseMapper.selectByPrimaryKey(resourceId));
 	}
 
 	

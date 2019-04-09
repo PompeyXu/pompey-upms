@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.pompey.upms.system.bean.DemoVo;
+import com.pompey.upms.system.model.DemoVo;
 import com.pompey.upms.system.service.IDemoService;
 
 @SpringBootTest

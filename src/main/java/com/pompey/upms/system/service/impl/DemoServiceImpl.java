@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.pompey.upms.common.service.impl.BaseServiceImpl;
-import com.pompey.upms.system.bean.DemoVo;
 import com.pompey.upms.system.mapper.IDemoMapper;
+import com.pompey.upms.system.model.DemoVo;
 import com.pompey.upms.system.service.IDemoService;
 
 /**
@@ -38,7 +38,7 @@ public class DemoServiceImpl extends BaseServiceImpl<DemoVo> implements IDemoSer
 
 	@Override
 	public PageInfo<DemoVo> getList() {
-		final PageInfo<DemoVo> pageInfo = PageHelper.startPage(1, 10).setOrderBy("id desc").doSelectPageInfo(() -> this.userinfoMapper.selectAll());
+		final PageInfo<DemoVo> pageInfo = PageHelper.startPage(1, 10).doSelectPageInfo(() -> this.userinfoMapper.selectAll());
 		
 //		 PageHelper.startPage(1, 10).setOrderBy("id desc");
 //	     final PageInfo<UserInfo> userPageInfo = new PageInfo<>(this.userinfoMapper.selectAll());

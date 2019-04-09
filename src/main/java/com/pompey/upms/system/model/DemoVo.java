@@ -1,9 +1,10 @@
-package com.pompey.upms.system.bean;
+package com.pompey.upms.system.model;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @ClassName: UserInfo
@@ -20,7 +21,7 @@ public class DemoVo implements java.io.Serializable{
 	/**
 	 * 用户id
 	 */
-	private int id;
+	private String resourceId;
 	/**
 	 * 登录账号
 	 */
@@ -36,15 +37,17 @@ public class DemoVo implements java.io.Serializable{
 	 */
 	private String password;
 	
+	@Transient
 	private LocalDateTime updateDateTime;
-	
+	@Transient
 	private Date crateDateTime;
 	
-	public int getId() {
-		return id;
+	
+	public String getResourceId() {
+		return resourceId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
 	}
 	public String getLoginAccount() {
 		return loginAccount;
@@ -81,10 +84,6 @@ public class DemoVo implements java.io.Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	@Override
-	public String toString() {
-		return "UserInfo [id=" + id + ", loginAccount=" + loginAccount + ", userName=" + userName + ", password="
-				+ password + "]";
-	}
+	
 	 
 }

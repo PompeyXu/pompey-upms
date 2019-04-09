@@ -3,11 +3,14 @@ package com.pompey.upms.system.controller;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.pagehelper.PageInfo;
 import com.pompey.upms.exception.CustomException;
-import com.pompey.upms.system.bean.DemoVo;
+import com.pompey.upms.system.model.DemoVo;
+import com.pompey.upms.system.service.IDemoService;
 
 /**
  * @ClassName: DemoController
@@ -19,8 +22,11 @@ import com.pompey.upms.system.bean.DemoVo;
 @RestController
 public class DemoController {
 
-	@GetMapping("/test3")
-    public String test3(Integer num) {
+	@Autowired
+	IDemoService demoService;
+	
+	@GetMapping("/test")
+    public String test(Integer num) {
         if (num == null) {
             throw new CustomException(400, "num不能为空");
         }
@@ -29,10 +35,15 @@ public class DemoController {
     }
 	
 	@GetMapping("/time")
-    public Object test4() {
+    public Object time() {
 		DemoVo vo = new DemoVo();
 		vo.setUpdateDateTime(LocalDateTime.now());
 		vo.setCrateDateTime(new Date());
         return vo;
     }
+	@GetMapping("/list")
+	public Object list() {
+		PageInfo<DemoVo> data = demoService.getList();
+		return data;
+	}
 }

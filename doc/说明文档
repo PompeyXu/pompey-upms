@@ -13,10 +13,19 @@
 - @ApiImplicitParam() 用于方法 
 表示单独的请求参数 
 - @ApiImplicitParams() 用于方法，包含多个 @ApiImplicitParam
-
 具体使用举例说明： 
 @Api() 
 用于类；表示标识这个类是swagger的资源 
 tags–表示说明 
 value–也是说明，可以使用tags替代 
 但是tags如果有多个值，会生成多个list
+
+
+
+1、将项目中plugins中的 lombok.jar 放在eclipse安装目录下，和 eclipse.ini 文件平级的。
+2、在eclipse安装目录下运行 java -jar lombok.jar
+	a、运行后会弹框如下框，直接点确定
+	b、点specify location 按钮，选择eclipse的安装目录，选择到eclipse层即可。
+	c、点击install即可
+3、如果想看看是否真的安装成功，可以在 eclipse.ini 中看看，我的环境是多了一行(-javaagent:D:\Program Files\eclipse\lombok.jar) 
+4、重启eclipse，再clean project。
