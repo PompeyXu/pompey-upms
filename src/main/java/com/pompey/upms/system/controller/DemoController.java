@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageInfo;
@@ -45,5 +46,10 @@ public class DemoController {
 	public Object list() {
 		PageInfo<DemoVo> data = demoService.getList();
 		return data;
+	}
+	
+	@GetMapping("/getuser/{id}")
+	public Object getUser(@PathVariable(name = "id")String resourceId) {
+		return demoService.getUserInfoById(resourceId);
 	}
 }

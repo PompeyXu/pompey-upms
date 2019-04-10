@@ -19,13 +19,13 @@ public class UserInfoTest {
 	
 	@Test
 	public void testGetUserInfoById() {
-		System.out.println(userInfoService.getUserInfoById(1));
+		System.out.println(userInfoService.getUserInfoById("1"));
 	}
 	
 	@Test
 	public void testInsert() {
 		DemoVo info = new DemoVo();
-		info.setId(1);
+		info.setResourceId("1");
 		info.setLoginAccount("zhangsan");
 		info.setUserName("张三");
 		info.setPassword("123456");
@@ -39,7 +39,7 @@ public class UserInfoTest {
 	
 	@Test
 	public void testDeleteId() {
-		System.out.println(userInfoService.delete(1));
+		System.out.println(userInfoService.delete("1"));
 	}
 	
 }

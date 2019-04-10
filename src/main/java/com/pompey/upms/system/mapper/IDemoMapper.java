@@ -19,11 +19,11 @@ public interface IDemoMapper extends BaseMapper<DemoVo>{
 
 	/**
 	 * 根据主键获取用户信息
-	 * @param id 主键
+	 * @param resourceId 主键
 	 * @return DemoVo
 	 * @throws
 	 */
-	public DemoVo getUserInfoById(@Param("resourceId") int resourceId);
+	public DemoVo getUserInfoById(@Param("resourceId") String resourceId);
 	
 	/**
 	 * 插入数据

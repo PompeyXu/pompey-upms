@@ -26,7 +26,7 @@ public interface IDemoService extends IBaseService<DemoVo>{
 	 * @return
 	 * @throws
 	 */
-	public DemoVo getUserInfoById(int id);
+	public DemoVo getUserInfoById(String id);
 	
 	/**
 	 * 插入数据

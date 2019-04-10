@@ -5,7 +5,7 @@
 	<resultMap type="com.pompey.upms.system.model.DemoVo" id="BaseResultMap"></resultMap>
 	
 	<select id="getUserInfoById" resultMap="BaseResultMap">
-		select resourceId, login_account, user_name, password from sys_user_info where id=${resourceId}
+		select resource_id, login_account, user_name, password from sys_user_info where resource_id=${resourceId}
 	</select>
 	
 	<insert id="insert" parameterType="com.pompey.upms.system.model.DemoVo">

@@ -27,7 +27,7 @@ public class DemoServiceImpl extends BaseServiceImpl<DemoVo> implements IDemoSer
 	private IDemoMapper userinfoMapper;
 
 	@Override
-	public DemoVo getUserInfoById(int id) {
+	public DemoVo getUserInfoById(String id) {
 		return userinfoMapper.getUserInfoById(id);
 	}
 

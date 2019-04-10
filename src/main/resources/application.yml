@@ -29,10 +29,11 @@ spring:
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
 
+  profiles:
+    active: dev
+
 logging: 
   config: classpath:logback-spring.xml
-  path: E:/log/
-  file: pompey-upms.log
 
 mybatis:
   mapper-locations: classpath*:com/pompey/upms/**/*Mapper.xml
@@ -40,10 +41,7 @@ mybatis:
   configuration:
     ##驼峰命名规范
     map-underscore-to-camel-case: true
-logging:
-  level:
-    com.pompey.upms: debug
-
+    
 ########## 通用Mapper ##########
 mapper:
   identity: mysql

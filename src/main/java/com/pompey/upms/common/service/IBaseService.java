@@ -36,7 +36,7 @@ public interface IBaseService<T> {
 	
 	/**
 	 * 删除方法
-	 * @param id 主键
+	 * @param resourceId 主键
 	 * @return int
 	 * @throws
 	 */
