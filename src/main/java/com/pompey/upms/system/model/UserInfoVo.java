@@ -18,9 +18,6 @@ import io.swagger.annotations.ApiModelProperty;
 public class UserInfoVo extends BaseVo{
 	
 	private static final long serialVersionUID = 1L;
-
-	@ApiModelProperty(value="用户id")
-	private String resourceId;
 	
 	@ApiModelProperty(value="登录账号")
 	private String loginAccount;
@@ -115,29 +112,8 @@ public class UserInfoVo extends BaseVo{
 	@ApiModelProperty(value="状态（0正常 1删除 2停用 3冻结）")
 	private String status;
 	
-	@ApiModelProperty(value="创建者")
-	private String createBy;
-	
-	@ApiModelProperty(value="创建时间")
-	private Date createDate;
-	
-	@ApiModelProperty(value="更新者")
-	private String updateBy;
-	
-	@ApiModelProperty(value="更新时间")
-	private Date updateDate;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
-	
-	@ApiModelProperty(value="所属组织id")
-	private String orgId;
-	
-	@ApiModelProperty(value="所属组织名称")
-	private String orgName;
-	
-	@ApiModelProperty(value="所属组织id")
-	private String orgFullId;
 	
 	@ApiModelProperty(value="扩展 String 1")
 	private String extendS1;
@@ -186,6 +162,390 @@ public class UserInfoVo extends BaseVo{
 	
 	@ApiModelProperty(value="扩展 Date 4")
 	private Date extendD4;
+
+	public String getLoginAccount() {
+		return loginAccount;
+	}
+
+	public void setLoginAccount(String loginAccount) {
+		this.loginAccount = loginAccount;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	public String getSign() {
+		return sign;
+	}
+
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
+
+	public String getWxOpenid() {
+		return wxOpenid;
+	}
+
+	public void setWxOpenid(String wxOpenid) {
+		this.wxOpenid = wxOpenid;
+	}
+
+	public String getMobileImei() {
+		return mobileImei;
+	}
+
+	public void setMobileImei(String mobileImei) {
+		this.mobileImei = mobileImei;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public String getRefCode() {
+		return refCode;
+	}
+
+	public void setRefCode(String refCode) {
+		this.refCode = refCode;
+	}
+
+	public String getRefName() {
+		return refName;
+	}
+
+	public void setRefName(String refName) {
+		this.refName = refName;
+	}
+
+	public String getMgrType() {
+		return mgrType;
+	}
+
+	public void setMgrType(String mgrType) {
+		this.mgrType = mgrType;
+	}
+
+	public String getPwdSecurityLevel() {
+		return pwdSecurityLevel;
+	}
+
+	public void setPwdSecurityLevel(String pwdSecurityLevel) {
+		this.pwdSecurityLevel = pwdSecurityLevel;
+	}
+
+	public Date getPwdUpdateDate() {
+		return pwdUpdateDate;
+	}
+
+	public void setPwdUpdateDate(Date pwdUpdateDate) {
+		this.pwdUpdateDate = pwdUpdateDate;
+	}
+
+	public String getPwdUpdateRecord() {
+		return pwdUpdateRecord;
+	}
+
+	public void setPwdUpdateRecord(String pwdUpdateRecord) {
+		this.pwdUpdateRecord = pwdUpdateRecord;
+	}
+
+	public String getPwdQuestionA() {
+		return pwdQuestionA;
+	}
+
+	public void setPwdQuestionA(String pwdQuestionA) {
+		this.pwdQuestionA = pwdQuestionA;
+	}
+
+	public String getPwdQuestionAnswerA() {
+		return pwdQuestionAnswerA;
+	}
+
+	public void setPwdQuestionAnswerA(String pwdQuestionAnswerA) {
+		this.pwdQuestionAnswerA = pwdQuestionAnswerA;
+	}
+
+	public String getPwdQuestionB() {
+		return pwdQuestionB;
+	}
+
+	public void setPwdQuestionB(String pwdQuestionB) {
+		this.pwdQuestionB = pwdQuestionB;
+	}
+
+	public String getPwdQuestionAnswerB() {
+		return pwdQuestionAnswerB;
+	}
+
+	public void setPwdQuestionAnswerB(String pwdQuestionAnswerB) {
+		this.pwdQuestionAnswerB = pwdQuestionAnswerB;
+	}
+
+	public String getPwdQuestionC() {
+		return pwdQuestionC;
+	}
+
+	public void setPwdQuestionC(String pwdQuestionC) {
+		this.pwdQuestionC = pwdQuestionC;
+	}
+
+	public String getPwdQuestionAnswerC() {
+		return pwdQuestionAnswerC;
+	}
+
+	public void setPwdQuestionAnswerC(String pwdQuestionAnswerC) {
+		this.pwdQuestionAnswerC = pwdQuestionAnswerC;
+	}
+
+	public Date getPwdQuestUpdateDate() {
+		return pwdQuestUpdateDate;
+	}
+
+	public void setPwdQuestUpdateDate(Date pwdQuestUpdateDate) {
+		this.pwdQuestUpdateDate = pwdQuestUpdateDate;
+	}
+
+	public String getLastLoginIp() {
+		return lastLoginIp;
+	}
+
+	public void setLastLoginIp(String lastLoginIp) {
+		this.lastLoginIp = lastLoginIp;
+	}
+
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
+
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
+	}
+
+	public Date getFreezeDate() {
+		return freezeDate;
+	}
+
+	public void setFreezeDate(Date freezeDate) {
+		this.freezeDate = freezeDate;
+	}
+
+	public String getFreezeCause() {
+		return freezeCause;
+	}
+
+	public void setFreezeCause(String freezeCause) {
+		this.freezeCause = freezeCause;
+	}
+
+	public String getUserWeight() {
+		return userWeight;
+	}
+
+	public void setUserWeight(String userWeight) {
+		this.userWeight = userWeight;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public String getExtendS1() {
+		return extendS1;
+	}
+
+	public void setExtendS1(String extendS1) {
+		this.extendS1 = extendS1;
+	}
+
+	public String getExtendS2() {
+		return extendS2;
+	}
+
+	public void setExtendS2(String extendS2) {
+		this.extendS2 = extendS2;
+	}
+
+	public String getExtendS3() {
+		return extendS3;
+	}
+
+	public void setExtendS3(String extendS3) {
+		this.extendS3 = extendS3;
+	}
+
+	public String getExtendS4() {
+		return extendS4;
+	}
+
+	public void setExtendS4(String extendS4) {
+		this.extendS4 = extendS4;
+	}
+
+	public String getExtendI1() {
+		return extendI1;
+	}
+
+	public void setExtendI1(String extendI1) {
+		this.extendI1 = extendI1;
+	}
+
+	public String getExtendI2() {
+		return extendI2;
+	}
+
+	public void setExtendI2(String extendI2) {
+		this.extendI2 = extendI2;
+	}
+
+	public String getExtendI3() {
+		return extendI3;
+	}
+
+	public void setExtendI3(String extendI3) {
+		this.extendI3 = extendI3;
+	}
+
+	public String getExtendI4() {
+		return extendI4;
+	}
+
+	public void setExtendI4(String extendI4) {
+		this.extendI4 = extendI4;
+	}
+
+	public String getExtendF1() {
+		return extendF1;
+	}
+
+	public void setExtendF1(String extendF1) {
+		this.extendF1 = extendF1;
+	}
+
+	public String getExtendF2() {
+		return extendF2;
+	}
+
+	public void setExtendF2(String extendF2) {
+		this.extendF2 = extendF2;
+	}
+
+	public String getExtendF3() {
+		return extendF3;
+	}
+
+	public void setExtendF3(String extendF3) {
+		this.extendF3 = extendF3;
+	}
+
+	public String getExtendF4() {
+		return extendF4;
+	}
+
+	public void setExtendF4(String extendF4) {
+		this.extendF4 = extendF4;
+	}
+
+	public Date getExtendD1() {
+		return extendD1;
+	}
+
+	public void setExtendD1(Date extendD1) {
+		this.extendD1 = extendD1;
+	}
+
+	public Date getExtendD2() {
+		return extendD2;
+	}
+
+	public void setExtendD2(Date extendD2) {
+		this.extendD2 = extendD2;
+	}
+
+	public Date getExtendD3() {
+		return extendD3;
+	}
+
+	public void setExtendD3(Date extendD3) {
+		this.extendD3 = extendD3;
+	}
+
+	public Date getExtendD4() {
+		return extendD4;
+	}
+
+	public void setExtendD4(Date extendD4) {
+		this.extendD4 = extendD4;
+	}
 
 }
 

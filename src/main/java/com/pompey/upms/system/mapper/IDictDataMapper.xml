@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pompey.upms.system.mapper.IDictDataMapper">
+	<resultMap type="com.pompey.upms.system.model.DictDataVo" id="resultMap">
+		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
+		<result column="dict_id" property="dictId" jdbcType="VARCHAR" />
+		<result column="sort_number" property="sortNumber" jdbcType="DECIMAL" />
+		<result column="dict_label" property="dictLabel" jdbcType="VARCHAR" />
+		<result column="dict_value" property="dictValue" jdbcType="VARCHAR" />
+		<result column="dict_type" property="dictType" jdbcType="VARCHAR" />
+		<result column="is_sys" property="isSys" jdbcType="CHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="css_style" property="cssStyle" jdbcType="VARCHAR" />
+		<result column="css_class" property="cssClass" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="CHAR" />
+		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
+		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="extend_s1" property="extendS1" jdbcType="VARCHAR" />
+		<result column="extend_s2" property="extendS2" jdbcType="VARCHAR" />
+		<result column="extend_s3" property="extendS3" jdbcType="VARCHAR" />
+		<result column="extend_s4" property="extendS4" jdbcType="VARCHAR" />
+		<result column="extend_i1" property="extendI1" jdbcType="DECIMAL" />
+		<result column="extend_i2" property="extendI2" jdbcType="DECIMAL" />
+		<result column="extend_i3" property="extendI3" jdbcType="DECIMAL" />
+		<result column="extend_i4" property="extendI4" jdbcType="DECIMAL" />
+		<result column="extend_f1" property="extendF1" jdbcType="DECIMAL" />
+		<result column="extend_f2" property="extendF2" jdbcType="DECIMAL" />
+		<result column="extend_f3" property="extendF3" jdbcType="DECIMAL" />
+		<result column="extend_f4" property="extendF4" jdbcType="DECIMAL" />
+		<result column="extend_d1" property="extendD1" jdbcType="TIMESTAMP" />
+		<result column="extend_d2" property="extendD2" jdbcType="TIMESTAMP" />
+		<result column="extend_d3" property="extendD3" jdbcType="TIMESTAMP" />
+		<result column="extend_d4" property="extendD4" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="columnList">
+		a.resource_id,
+		a.dict_id,
+		a.sort_number,
+		a.dict_label,
+		a.dict_value,
+		a.dict_type,
+		a.is_sys,
+		a.description,
+		a.css_style,
+		a.css_class,
+		a.status,
+		a.create_by,
+		a.create_date,
+		a.update_by,
+		a.update_date,
+		a.remarks,
+		a.extend_s1,
+		a.extend_s2,
+		a.extend_s3,
+		a.extend_s4,
+		a.extend_i1,
+		a.extend_i2,
+		a.extend_i3,
+		a.extend_i4,
+		a.extend_f1,
+		a.extend_f2,
+		a.extend_f3,
+		a.extend_f4,
+		a.extend_d1,
+		a.extend_d2,
+		a.extend_d3,
+		a.extend_d4
+	</sql>
+
+
+	<!-- 查询列表 -->
+	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_dict_data a
+	</select>
+
+	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_dict_data a
+		where resource_id=#{resourceId,jdbcType=INTEGER}
+	</select>
+
+
+</mapper>

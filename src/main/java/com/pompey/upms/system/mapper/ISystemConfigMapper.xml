@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pompey.upms.system.mapper.ISystemConfigMapper">
+	<resultMap type="com.pompey.upms.system.model.SystemConfigVo" id="resultMap">
+		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
+		<result column="config_name" property="configName" jdbcType="VARCHAR" />
+		<result column="config_key" property="configKey" jdbcType="VARCHAR" />
+		<result column="config_value" property="configValue" jdbcType="VARCHAR" />
+		<result column="is_sys" property="isSys" jdbcType="CHAR" />
+		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
+		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columnList">
+		a.resource_id,
+		a.config_name,
+		a.config_key,
+		a.config_value,
+		a.is_sys,
+		a.create_by,
+		a.create_date,
+		a.update_by,
+		a.update_date,
+		a.remarks
+	</sql>
+
+
+	<!-- 查询列表 -->
+	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_system_config a
+	</select>
+
+	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_system_config a
+		where resource_id=#{resourceId,jdbcType=INTEGER}
+	</select>
+
+</mapper>
