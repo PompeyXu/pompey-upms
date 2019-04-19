@@ -32,6 +32,9 @@ spring:
   profiles:
     active: dev
 
+swagger: 
+  enable: true
+
 logging: 
   config: classpath:logback-spring.xml
 

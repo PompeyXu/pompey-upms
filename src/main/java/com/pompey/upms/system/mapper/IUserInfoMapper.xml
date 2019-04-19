@@ -2,62 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pompey.upms.system.mapper.IUserInfoMapper">
 	<resultMap type="com.pompey.upms.system.model.UserInfoVo" id="resultMap">
-		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
-		<result column="login_account" property="loginAccount" jdbcType="VARCHAR" />
-		<result column="user_name" property="userName" jdbcType="VARCHAR" />
-		<result column="password" property="password" jdbcType="VARCHAR" />
-		<result column="email" property="email" jdbcType="VARCHAR" />
-		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
-		<result column="phone" property="phone" jdbcType="VARCHAR" />
-		<result column="sex" property="sex" jdbcType="CHAR" />
-		<result column="avatar" property="avatar" jdbcType="VARCHAR" />
-		<result column="sign" property="sign" jdbcType="VARCHAR" />
-		<result column="wx_openid" property="wxOpenid" jdbcType="VARCHAR" />
-		<result column="mobile_imei" property="mobileImei" jdbcType="VARCHAR" />
-		<result column="user_type" property="userType" jdbcType="VARCHAR" />
-		<result column="ref_code" property="refCode" jdbcType="VARCHAR" />
-		<result column="ref_name" property="refName" jdbcType="VARCHAR" />
-		<result column="mgr_type" property="mgrType" jdbcType="CHAR" />
-		<result column="pwd_security_level" property="pwdSecurityLevel" jdbcType="DECIMAL" />
-		<result column="pwd_update_date" property="pwdUpdateDate" jdbcType="TIMESTAMP" />
-		<result column="pwd_update_record" property="pwdUpdateRecord" jdbcType="VARCHAR" />
-		<result column="pwd_question_a" property="pwdQuestionA" jdbcType="VARCHAR" />
-		<result column="pwd_question_answer_a" property="pwdQuestionAnswerA" jdbcType="VARCHAR" />
-		<result column="pwd_question_b" property="pwdQuestionB" jdbcType="VARCHAR" />
-		<result column="pwd_question_answer_b" property="pwdQuestionAnswerB" jdbcType="VARCHAR" />
-		<result column="pwd_question_c" property="pwdQuestionC" jdbcType="VARCHAR" />
-		<result column="pwd_question_answer_c" property="pwdQuestionAnswerC" jdbcType="VARCHAR" />
-		<result column="pwd_quest_update_date" property="pwdQuestUpdateDate" jdbcType="TIMESTAMP" />
-		<result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
-		<result column="last_login_date" property="lastLoginDate" jdbcType="TIMESTAMP" />
-		<result column="freeze_date" property="freezeDate" jdbcType="TIMESTAMP" />
-		<result column="freeze_cause" property="freezeCause" jdbcType="VARCHAR" />
-		<result column="user_weight" property="userWeight" jdbcType="DECIMAL" />
-		<result column="status" property="status" jdbcType="CHAR" />
-		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
-		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
-		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
-		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
-		<result column="org_id" property="orgId" jdbcType="VARCHAR" />
-		<result column="org_name" property="orgName" jdbcType="VARCHAR" />
-		<result column="org_full_id" property="orgFullId" jdbcType="VARCHAR" />
-		<result column="extend_s1" property="extendS1" jdbcType="VARCHAR" />
-		<result column="extend_s2" property="extendS2" jdbcType="VARCHAR" />
-		<result column="extend_s3" property="extendS3" jdbcType="VARCHAR" />
-		<result column="extend_s4" property="extendS4" jdbcType="VARCHAR" />
-		<result column="extend_i1" property="extendI1" jdbcType="DECIMAL" />
-		<result column="extend_i2" property="extendI2" jdbcType="DECIMAL" />
-		<result column="extend_i3" property="extendI3" jdbcType="DECIMAL" />
-		<result column="extend_i4" property="extendI4" jdbcType="DECIMAL" />
-		<result column="extend_f1" property="extendF1" jdbcType="DECIMAL" />
-		<result column="extend_f2" property="extendF2" jdbcType="DECIMAL" />
-		<result column="extend_f3" property="extendF3" jdbcType="DECIMAL" />
-		<result column="extend_f4" property="extendF4" jdbcType="DECIMAL" />
-		<result column="extend_d1" property="extendD1" jdbcType="TIMESTAMP" />
-		<result column="extend_d2" property="extendD2" jdbcType="TIMESTAMP" />
-		<result column="extend_d3" property="extendD3" jdbcType="TIMESTAMP" />
-		<result column="extend_d4" property="extendD4" jdbcType="TIMESTAMP" />
+		
 	</resultMap>
 
 	<sql id="columnList">

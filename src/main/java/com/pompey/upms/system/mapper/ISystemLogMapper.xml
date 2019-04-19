@@ -2,29 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pompey.upms.system.mapper.ISystemLogMapper">
 	<resultMap type="com.pompey.upms.system.model.SystemLogVo" id="resultMap">
-		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
-		<result column="log_type" property="logType" jdbcType="VARCHAR" />
-		<result column="log_title" property="logTitle" jdbcType="VARCHAR" />
-		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
-		<result column="create_by_name" property="createByName" jdbcType="VARCHAR" />
-		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
-		<result column="request_uri" property="requestUri" jdbcType="VARCHAR" />
-		<result column="request_method" property="requestMethod" jdbcType="VARCHAR" />
-		<result column="request_params" property="requestParams" jdbcType="VARCHAR" />
-		<result column="diff_modify_data" property="diffModifyData" jdbcType="VARCHAR" />
-		<result column="biz_key" property="bizKey" jdbcType="VARCHAR" />
-		<result column="biz_type" property="bizType" jdbcType="VARCHAR" />
-		<result column="remote_addr" property="remoteAddr" jdbcType="VARCHAR" />
-		<result column="server_addr" property="serverAddr" jdbcType="VARCHAR" />
-		<result column="is_exception" property="isException" jdbcType="CHAR" />
-		<result column="exception_info" property="exceptionInfo" jdbcType="VARCHAR" />
-		<result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
-		<result column="device_name" property="deviceName" jdbcType="VARCHAR" />
-		<result column="browser_name" property="browserName" jdbcType="VARCHAR" />
-		<result column="execute_time" property="executeTime" jdbcType="DECIMAL" />
-		<result column="org_id" property="orgId" jdbcType="VARCHAR" />
-		<result column="org_name" property="orgName" jdbcType="VARCHAR" />
-		<result column="org_full_id" property="orgFullId" jdbcType="VARCHAR" />
+		
 	</resultMap>
 
 	<sql id="columnList">

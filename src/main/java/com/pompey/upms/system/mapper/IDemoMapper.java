@@ -3,9 +3,8 @@ package com.pompey.upms.system.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.pompey.upms.common.mapper.PompeyMapper;
 import com.pompey.upms.system.model.DemoVo;
-
-import tk.mybatis.mapper.common.BaseMapper;
 
 /**
  * @ClassName: IDemoMapper
@@ -15,7 +14,7 @@ import tk.mybatis.mapper.common.BaseMapper;
  *
  */
 @Mapper
-public interface IDemoMapper extends BaseMapper<DemoVo>{
+public interface IDemoMapper extends PompeyMapper<DemoVo>{
 
 	/**
 	 * 根据主键获取用户信息

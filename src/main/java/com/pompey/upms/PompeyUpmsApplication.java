@@ -3,7 +3,6 @@ package com.pompey.upms;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @ClassName: PompeyUpmsApplication
  * @Description: PompeyUpms启动方法
@@ -11,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date: 2019-04-09 21:33
  *
  */
-@EnableSwagger2
 @SpringBootApplication
 public class PompeyUpmsApplication {
 

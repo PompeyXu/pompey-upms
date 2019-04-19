@@ -1,11 +1,7 @@
 package com.pompey.upms.system.model;
 
-import java.util.Date;
-
 import javax.persistence.Table;
-
 import com.pompey.upms.common.model.BaseVo;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

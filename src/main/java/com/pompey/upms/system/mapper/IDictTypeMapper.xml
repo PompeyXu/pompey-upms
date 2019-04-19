@@ -2,20 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pompey.upms.system.mapper.IDictTypeMapper">
 	<resultMap type="com.pompey.upms.system.model.DictTypeVo" id="resultMap">
-		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
-		<result column="dict_code" property="dictCode" jdbcType="VARCHAR" />
-		<result column="dict_name" property="dictName" jdbcType="VARCHAR" />
-		<result column="dict_type" property="dictType" jdbcType="VARCHAR" />
-		<result column="is_sys" property="isSys" jdbcType="CHAR" />
-		<result column="status" property="status" jdbcType="CHAR" />
-		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
-		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
-		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
-		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
-		<result column="org_id" property="orgId" jdbcType="VARCHAR" />
-		<result column="org_name" property="orgName" jdbcType="VARCHAR" />
-		<result column="org_full_id" property="orgFullId" jdbcType="VARCHAR" />
+		
 	</resultMap>
 
 	<sql id="columnList">

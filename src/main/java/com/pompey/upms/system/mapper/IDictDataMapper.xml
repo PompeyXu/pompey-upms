@@ -2,38 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pompey.upms.system.mapper.IDictDataMapper">
 	<resultMap type="com.pompey.upms.system.model.DictDataVo" id="resultMap">
-		<result column="resource_id" property="resourceId" jdbcType="VARCHAR" />
-		<result column="dict_id" property="dictId" jdbcType="VARCHAR" />
-		<result column="sort_number" property="sortNumber" jdbcType="DECIMAL" />
-		<result column="dict_label" property="dictLabel" jdbcType="VARCHAR" />
-		<result column="dict_value" property="dictValue" jdbcType="VARCHAR" />
-		<result column="dict_type" property="dictType" jdbcType="VARCHAR" />
-		<result column="is_sys" property="isSys" jdbcType="CHAR" />
-		<result column="description" property="description" jdbcType="VARCHAR" />
-		<result column="css_style" property="cssStyle" jdbcType="VARCHAR" />
-		<result column="css_class" property="cssClass" jdbcType="VARCHAR" />
-		<result column="status" property="status" jdbcType="CHAR" />
-		<result column="create_by" property="createBy" jdbcType="VARCHAR" />
-		<result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
-		<result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-		<result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
-		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
-		<result column="extend_s1" property="extendS1" jdbcType="VARCHAR" />
-		<result column="extend_s2" property="extendS2" jdbcType="VARCHAR" />
-		<result column="extend_s3" property="extendS3" jdbcType="VARCHAR" />
-		<result column="extend_s4" property="extendS4" jdbcType="VARCHAR" />
-		<result column="extend_i1" property="extendI1" jdbcType="DECIMAL" />
-		<result column="extend_i2" property="extendI2" jdbcType="DECIMAL" />
-		<result column="extend_i3" property="extendI3" jdbcType="DECIMAL" />
-		<result column="extend_i4" property="extendI4" jdbcType="DECIMAL" />
-		<result column="extend_f1" property="extendF1" jdbcType="DECIMAL" />
-		<result column="extend_f2" property="extendF2" jdbcType="DECIMAL" />
-		<result column="extend_f3" property="extendF3" jdbcType="DECIMAL" />
-		<result column="extend_f4" property="extendF4" jdbcType="DECIMAL" />
-		<result column="extend_d1" property="extendD1" jdbcType="TIMESTAMP" />
-		<result column="extend_d2" property="extendD2" jdbcType="TIMESTAMP" />
-		<result column="extend_d3" property="extendD3" jdbcType="TIMESTAMP" />
-		<result column="extend_d4" property="extendD4" jdbcType="TIMESTAMP" />
+		
 	</resultMap>
 
 	<sql id="columnList">
