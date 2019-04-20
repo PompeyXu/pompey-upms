@@ -5,6 +5,11 @@ import org.springframework.util.StringUtils;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+/**
+ * 返回结果包装类
+ * @author PompeyXu
+ * @date 2019-04-20 19:52
+ */
 @ApiModel("返回结果")
 public class ResultInfo<T> {
 

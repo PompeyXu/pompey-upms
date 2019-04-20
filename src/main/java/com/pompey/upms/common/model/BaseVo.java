@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -40,6 +41,10 @@ public class BaseVo implements java.io.Serializable{
 	
 	@ApiModelProperty(value="所属组织id")
 	private String orgFullId;
+	
+	@ApiModelProperty(value="状态（0正常 1删除）")
+	@TableLogic
+	private String status;
 	
 
 	public String getResourceId() {
@@ -105,6 +110,17 @@ public class BaseVo implements java.io.Serializable{
 	public void setOrgId(String orgId) {
 		this.orgId = orgId;
 	}
-	
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 }

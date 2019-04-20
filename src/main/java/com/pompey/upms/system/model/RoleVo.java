@@ -28,9 +28,6 @@ public class RoleVo extends BaseVo{
 	@ApiModelProperty(value="系统内置（1是 0否）")
 	private String isSys;
 	
-	@ApiModelProperty(value="状态（0正常 1删除 2停用）")
-	private String status;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
 	
@@ -62,13 +59,6 @@ public class RoleVo extends BaseVo{
 	
 	public void setIsSys(String isSys) {
 		this.isSys = isSys;
-	}
-	public String getStatus() {
-		return status;
-	}
-	
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 	public String getRemarks() {

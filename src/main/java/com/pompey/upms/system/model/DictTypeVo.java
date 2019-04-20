@@ -28,9 +28,6 @@ public class DictTypeVo extends BaseVo{
 	@ApiModelProperty(value="是否系统字典")
 	private String isSys;
 	
-	@ApiModelProperty(value="状态（0正常 1删除 2停用）")
-	private String status;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
 	
@@ -61,13 +58,6 @@ public class DictTypeVo extends BaseVo{
 	
 	public void setIsSys(String isSys) {
 		this.isSys = isSys;
-	}
-	public String getStatus() {
-		return status;
-	}
-	
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 	public String getRemarks() {

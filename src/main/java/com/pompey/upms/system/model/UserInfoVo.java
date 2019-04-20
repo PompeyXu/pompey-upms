@@ -108,9 +108,6 @@ public class UserInfoVo extends BaseVo{
 	@ApiModelProperty(value="用户权重（降序）")
 	private String userWeight;
 	
-	@ApiModelProperty(value="状态（0正常 1删除 2停用 3冻结）")
-	private String status;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
 	
@@ -376,14 +373,6 @@ public class UserInfoVo extends BaseVo{
 
 	public void setUserWeight(String userWeight) {
 		this.userWeight = userWeight;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getRemarks() {

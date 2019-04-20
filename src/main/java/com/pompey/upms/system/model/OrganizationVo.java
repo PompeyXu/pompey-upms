@@ -48,9 +48,6 @@ public class OrganizationVo extends BaseVo{
 	@ApiModelProperty(value="区域编码")
 	private String areaCode;
 	
-	@ApiModelProperty(value="状态（0正常 1删除 2停用）")
-	private String status;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
 	
@@ -141,13 +138,6 @@ public class OrganizationVo extends BaseVo{
 	
 	public void setAreaCode(String areaCode) {
 		this.areaCode = areaCode;
-	}
-	public String getStatus() {
-		return status;
-	}
-	
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 	public String getRemarks() {

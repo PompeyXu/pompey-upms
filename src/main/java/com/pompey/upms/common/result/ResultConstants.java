@@ -1,5 +1,11 @@
 package com.pompey.upms.common.result;
 
+/**
+ * 返回状态枚举
+ * @author PompeyXu
+ * @date 2019-04-20 19:52
+ *
+ */
 public enum ResultConstants {
 	/**
 	 * 成功

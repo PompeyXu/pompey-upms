@@ -69,9 +69,6 @@ public class MenuVo extends BaseVo{
 	@ApiModelProperty(value="归属模块（多个用逗号隔开）")
 	private String moduleCodes;
 	
-	@ApiModelProperty(value="状态（0正常 1删除 2停用）")
-	private String status;
-	
 	@ApiModelProperty(value="备注信息")
 	private String remarks;
 	
@@ -217,13 +214,6 @@ public class MenuVo extends BaseVo{
 	
 	public void setModuleCodes(String moduleCodes) {
 		this.moduleCodes = moduleCodes;
-	}
-	public String getStatus() {
-		return status;
-	}
-	
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 	public String getRemarks() {
