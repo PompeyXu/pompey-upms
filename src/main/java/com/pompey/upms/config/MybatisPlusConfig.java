@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 
@@ -61,5 +62,13 @@ public class MybatisPlusConfig {
 		performanceInterceptor.setFormat(true);
 		return performanceInterceptor;
 	}
+	
+	/**
+     * 乐观锁插件
+     * @return
+     */
+    public OptimisticLockerInterceptor optimisticLockerInterceptor(){
+        return new OptimisticLockerInterceptor();
+    }
 
 }

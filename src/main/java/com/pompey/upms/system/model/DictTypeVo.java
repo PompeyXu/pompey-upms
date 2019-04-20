@@ -1,7 +1,7 @@
 package com.pompey.upms.system.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.pompey.upms.common.model.BaseVo;
+import com.pompey.upms.common.base.BaseVo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -1,4 +1,4 @@
-package com.pompey.upms.common.model;
+package com.pompey.upms.common.base;
 
 import java.util.Date;
 
@@ -9,11 +9,11 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * 公共属性
+ * 公共属性基类
  * @author PompeyXu
  * @date 2019-04-10 23:15
  */
-public class BaseVo implements java.io.Serializable{
+public abstract class BaseVo implements java.io.Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
