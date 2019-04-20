@@ -1,7 +1,8 @@
 package com.pompey.upms.system.model;
 
-import javax.persistence.Table;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.pompey.upms.common.model.BaseVo;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -10,7 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
 * @date 2019-04-11 23:17:39
  */
 @ApiModel("角色表")
-@Table(name = "sys_role")
+@TableName(value = "sys_role")
 public class RoleVo extends BaseVo{
 	
 	private static final long serialVersionUID = 1L;

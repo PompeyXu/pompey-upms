@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.SystemConfigVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.SystemConfigVo;
 * @author PompeyXu
 * @date 2019-04-11 23:20:20
  */
-public interface ISystemConfigService extends IBaseService<SystemConfigVo>{
+public interface ISystemConfigService extends IService<SystemConfigVo>{
 	
 }
 

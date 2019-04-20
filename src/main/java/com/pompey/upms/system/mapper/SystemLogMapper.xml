@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.ISystemConfigMapper">
-	<resultMap type="com.pompey.upms.system.model.SystemConfigVo" id="resultMap">
+<mapper namespace="com.pompey.upms.system.mapper.SystemLogMapper">
+	<resultMap type="com.pompey.upms.system.model.SystemLogVo" id="resultMap">
 		
 	</resultMap>
 
 	<sql id="columnList">
 		a.resource_id,
-		a.config_name,
-		a.config_key,
-		a.config_value,
-		a.is_sys,
+		a.log_type,
+		a.log_title,
 		a.create_by,
+		a.create_by_name,
 		a.create_date,
-		a.update_by,
-		a.update_date,
-		a.remarks
+		a.request_uri,
+		a.request_method,
+		a.request_params,
+		a.diff_modify_data,
+		a.biz_key,
+		a.biz_type,
+		a.remote_addr,
+		a.server_addr,
+		a.is_exception,
+		a.exception_info,
+		a.user_agent,
+		a.device_name,
+		a.browser_name,
+		a.execute_time,
+		a.org_id,
+		a.org_name,
+		a.org_full_id
 	</sql>
 
 
@@ -23,13 +36,13 @@
 	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_system_config a
+		FROM sys_log a
 	</select>
 
 	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_system_config a
+		FROM sys_log a
 		where resource_id=#{resourceId,jdbcType=INTEGER}
 	</select>
 

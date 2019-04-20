@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.IRoleMapper">
-	<resultMap type="com.pompey.upms.system.model.RoleVo" id="resultMap">
+<mapper namespace="com.pompey.upms.system.mapper.DictTypeMapper">
+	<resultMap type="com.pompey.upms.system.model.DictTypeVo" id="resultMap">
 		
 	</resultMap>
 
 	<sql id="columnList">
 		a.resource_id,
-		a.role_name,
-		a.role_type,
-		a.role_sort,
+		a.dict_code,
+		a.dict_name,
+		a.dict_type,
 		a.is_sys,
 		a.status,
 		a.create_by,
@@ -27,13 +27,13 @@
 	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_role a
+		FROM sys_dict_type a
 	</select>
 
 	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_role a
+		FROM sys_dict_type a
 		where resource_id=#{resourceId,jdbcType=INTEGER}
 	</select>
 

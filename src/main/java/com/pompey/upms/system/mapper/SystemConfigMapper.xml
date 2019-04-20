@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.IDictTypeMapper">
-	<resultMap type="com.pompey.upms.system.model.DictTypeVo" id="resultMap">
+<mapper namespace="com.pompey.upms.system.mapper.SystemConfigMapper">
+	<resultMap type="com.pompey.upms.system.model.SystemConfigVo" id="resultMap">
 		
 	</resultMap>
 
 	<sql id="columnList">
 		a.resource_id,
-		a.dict_code,
-		a.dict_name,
-		a.dict_type,
+		a.config_name,
+		a.config_key,
+		a.config_value,
 		a.is_sys,
-		a.status,
 		a.create_by,
 		a.create_date,
 		a.update_by,
 		a.update_date,
-		a.remarks,
-		a.org_id,
-		a.org_name,
-		a.org_full_id
+		a.remarks
 	</sql>
 
 
@@ -27,13 +23,13 @@
 	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_dict_type a
+		FROM sys_system_config a
 	</select>
 
 	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_dict_type a
+		FROM sys_system_config a
 		where resource_id=#{resourceId,jdbcType=INTEGER}
 	</select>
 

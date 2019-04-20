@@ -1,7 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.github.pagehelper.PageInfo;
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.DemoVo;
 
 /**
@@ -11,14 +10,14 @@ import com.pompey.upms.system.model.DemoVo;
  * @date: 2019-04-09 21:36
  *
  */
-public interface IDemoService extends IBaseService<DemoVo>{
+public interface IDemoService extends IService<DemoVo>{
 
 	/**
 	 * 分页获取数据
 	 * @return 
 	 * @throws
 	 */
-	public PageInfo<DemoVo> getList();
+//	public PageInfo<DemoVo> getList();
 	
 	/**
 	 * 根据id获取用户数据

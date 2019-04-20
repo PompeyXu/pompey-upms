@@ -2,8 +2,7 @@ package com.pompey.upms.system.model;
 
 import java.util.Date;
 
-import javax.persistence.Table;
-
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.pompey.upms.common.model.BaseVo;
 
 import io.swagger.annotations.ApiModel;
@@ -14,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 * @date 2019-04-11 23:30:06
  */
 @ApiModel("组织表")
-@Table(name = "sys_organization")
+@TableName(value = "sys_organization")
 public class OrganizationVo extends BaseVo{
 	
 	private static final long serialVersionUID = 1L;
@@ -61,23 +60,11 @@ public class OrganizationVo extends BaseVo{
 	@ApiModelProperty(value="扩展 String 2")
 	private String extendS2;
 	
-	@ApiModelProperty(value="扩展 String 3")
-	private String extendS3;
-	
-	@ApiModelProperty(value="扩展 String 4")
-	private String extendS4;
-	
 	@ApiModelProperty(value="扩展 Integer 1")
 	private String extendI1;
 	
 	@ApiModelProperty(value="扩展 Integer 2")
 	private String extendI2;
-	
-	@ApiModelProperty(value="扩展 Integer 3")
-	private String extendI3;
-	
-	@ApiModelProperty(value="扩展 Integer 4")
-	private String extendI4;
 	
 	@ApiModelProperty(value="扩展 Float 1")
 	private String extendF1;
@@ -85,23 +72,11 @@ public class OrganizationVo extends BaseVo{
 	@ApiModelProperty(value="扩展 Float 2")
 	private String extendF2;
 	
-	@ApiModelProperty(value="扩展 Float 3")
-	private String extendF3;
-	
-	@ApiModelProperty(value="扩展 Float 4")
-	private String extendF4;
-	
 	@ApiModelProperty(value="扩展 Date 1")
 	private Date extendD1;
 	
 	@ApiModelProperty(value="扩展 Date 2")
 	private Date extendD2;
-	
-	@ApiModelProperty(value="扩展 Date 3")
-	private Date extendD3;
-	
-	@ApiModelProperty(value="扩展 Date 4")
-	private Date extendD4;
 
 	
 	public String getOrgCode() {
@@ -196,20 +171,7 @@ public class OrganizationVo extends BaseVo{
 	public void setExtendS2(String extendS2) {
 		this.extendS2 = extendS2;
 	}
-	public String getExtendS3() {
-		return extendS3;
-	}
 	
-	public void setExtendS3(String extendS3) {
-		this.extendS3 = extendS3;
-	}
-	public String getExtendS4() {
-		return extendS4;
-	}
-	
-	public void setExtendS4(String extendS4) {
-		this.extendS4 = extendS4;
-	}
 	public String getExtendI1() {
 		return extendI1;
 	}
@@ -224,20 +186,7 @@ public class OrganizationVo extends BaseVo{
 	public void setExtendI2(String extendI2) {
 		this.extendI2 = extendI2;
 	}
-	public String getExtendI3() {
-		return extendI3;
-	}
 	
-	public void setExtendI3(String extendI3) {
-		this.extendI3 = extendI3;
-	}
-	public String getExtendI4() {
-		return extendI4;
-	}
-	
-	public void setExtendI4(String extendI4) {
-		this.extendI4 = extendI4;
-	}
 	public String getExtendF1() {
 		return extendF1;
 	}
@@ -252,20 +201,7 @@ public class OrganizationVo extends BaseVo{
 	public void setExtendF2(String extendF2) {
 		this.extendF2 = extendF2;
 	}
-	public String getExtendF3() {
-		return extendF3;
-	}
 	
-	public void setExtendF3(String extendF3) {
-		this.extendF3 = extendF3;
-	}
-	public String getExtendF4() {
-		return extendF4;
-	}
-	
-	public void setExtendF4(String extendF4) {
-		this.extendF4 = extendF4;
-	}
 	public Date getExtendD1() {
 		return extendD1;
 	}
@@ -279,20 +215,6 @@ public class OrganizationVo extends BaseVo{
 	
 	public void setExtendD2(Date extendD2) {
 		this.extendD2 = extendD2;
-	}
-	public Date getExtendD3() {
-		return extendD3;
-	}
-	
-	public void setExtendD3(Date extendD3) {
-		this.extendD3 = extendD3;
-	}
-	public Date getExtendD4() {
-		return extendD4;
-	}
-	
-	public void setExtendD4(Date extendD4) {
-		this.extendD4 = extendD4;
 	}
 }
 

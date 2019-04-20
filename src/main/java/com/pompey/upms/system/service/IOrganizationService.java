@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.OrganizationVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.OrganizationVo;
 * @author PompeyXu
 * @date 2019-04-11 23:30:06
  */
-public interface IOrganizationService extends IBaseService<OrganizationVo>{
+public interface IOrganizationService extends IService<OrganizationVo>{
 	
 }
 

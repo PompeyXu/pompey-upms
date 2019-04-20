@@ -1,9 +1,9 @@
 package com.pompey.upms.system.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.pompey.upms.common.service.impl.BaseServiceImpl;
-import com.pompey.upms.system.mapper.IOrganizationMapper;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.pompey.upms.system.mapper.OrganizationMapper;
 import com.pompey.upms.system.model.OrganizationVo;
 import com.pompey.upms.system.service.IOrganizationService;
 
@@ -13,9 +13,7 @@ import com.pompey.upms.system.service.IOrganizationService;
 * @date 2019-04-11 23:30:06
  */
 @Service
-public class OrganizationServiceImpl extends BaseServiceImpl<OrganizationVo> implements IOrganizationService{
+public class OrganizationServiceImpl extends ServiceImpl<OrganizationMapper, OrganizationVo> implements IOrganizationService{
 	
-	@Autowired
-	private IOrganizationMapper mapper;
 	
 }

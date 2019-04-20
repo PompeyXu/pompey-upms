@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.IUserInfoMapper">
+<mapper namespace="com.pompey.upms.system.mapper.UserInfoMapper">
 	<resultMap type="com.pompey.upms.system.model.UserInfoVo" id="resultMap">
 		
 	</resultMap>
@@ -48,20 +48,12 @@
 		a.org_full_id,
 		a.extend_s1,
 		a.extend_s2,
-		a.extend_s3,
-		a.extend_s4,
 		a.extend_i1,
 		a.extend_i2,
-		a.extend_i3,
-		a.extend_i4,
 		a.extend_f1,
 		a.extend_f2,
-		a.extend_f3,
-		a.extend_f4,
 		a.extend_d1,
-		a.extend_d2,
-		a.extend_d3,
-		a.extend_d4
+		a.extend_d2
 	</sql>
 
 

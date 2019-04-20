@@ -3,7 +3,7 @@ package com.pompey.upms.system.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.pompey.upms.common.mapper.PompeyMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pompey.upms.system.model.UserInfoVo;
 
 /**
@@ -12,6 +12,6 @@ import com.pompey.upms.system.model.UserInfoVo;
 * @date 2019-04-08 23:49:37
  */
 @Mapper
-public interface IUserInfoMapper extends PompeyMapper<UserInfoVo>{
+public interface UserInfoMapper extends BaseMapper<UserInfoVo>{
 	
 }

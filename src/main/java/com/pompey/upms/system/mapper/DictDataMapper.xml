@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.ISystemLogMapper">
-	<resultMap type="com.pompey.upms.system.model.SystemLogVo" id="resultMap">
+<mapper namespace="com.pompey.upms.system.mapper.DictDataMapper">
+	<resultMap type="com.pompey.upms.system.model.DictDataVo" id="resultMap">
 		
 	</resultMap>
 
 	<sql id="columnList">
 		a.resource_id,
-		a.log_type,
-		a.log_title,
+		a.dict_id,
+		a.sort_number,
+		a.dict_label,
+		a.dict_value,
+		a.dict_type,
+		a.is_sys,
+		a.description,
+		a.css_style,
+		a.css_class,
+		a.status,
 		a.create_by,
-		a.create_by_name,
 		a.create_date,
-		a.request_uri,
-		a.request_method,
-		a.request_params,
-		a.diff_modify_data,
-		a.biz_key,
-		a.biz_type,
-		a.remote_addr,
-		a.server_addr,
-		a.is_exception,
-		a.exception_info,
-		a.user_agent,
-		a.device_name,
-		a.browser_name,
-		a.execute_time,
-		a.org_id,
-		a.org_name,
-		a.org_full_id
+		a.update_by,
+		a.update_date,
+		a.remarks,
+		a.extend_s1,
+		a.extend_s2,
+		a.extend_i1,
+		a.extend_i2,
+		a.extend_f1,
+		a.extend_f2,
+		a.extend_d1,
+		a.extend_d2
 	</sql>
 
 
@@ -36,14 +37,15 @@
 	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_log a
+		FROM sys_dict_data a
 	</select>
 
 	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_log a
+		FROM sys_dict_data a
 		where resource_id=#{resourceId,jdbcType=INTEGER}
 	</select>
+
 
 </mapper>

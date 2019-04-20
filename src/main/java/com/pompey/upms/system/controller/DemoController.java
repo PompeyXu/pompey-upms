@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pompey.upms.exception.CustomException;
 import com.pompey.upms.system.model.DemoVo;
 import com.pompey.upms.system.service.IDemoService;
@@ -44,8 +45,8 @@ public class DemoController {
     }
 	@GetMapping("/list")
 	public Object list() {
-		PageInfo<DemoVo> data = demoService.getList();
-		return data;
+		IPage<DemoVo> pageData = demoService.page(new Page<>(1, 10));
+		return pageData;
 	}
 	
 	@GetMapping("/getuser/{id}")

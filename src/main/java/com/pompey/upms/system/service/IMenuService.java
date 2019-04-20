@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.MenuVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.MenuVo;
 * @author PompeyXu
 * @date 2019-04-11 23:18:03
  */
-public interface IMenuService extends IBaseService<MenuVo>{
+public interface IMenuService extends IService<MenuVo>{
 	
 }
 

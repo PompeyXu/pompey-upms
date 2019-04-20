@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.RoleVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.RoleVo;
 * @author PompeyXu
 * @date 2019-04-11 23:17:39
  */
-public interface IRoleService extends IBaseService<RoleVo>{
+public interface IRoleService extends IService<RoleVo>{
 	
 }
 

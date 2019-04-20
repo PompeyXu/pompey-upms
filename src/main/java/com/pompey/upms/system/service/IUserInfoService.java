@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.UserInfoVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.UserInfoVo;
 * @author PompeyXu
 * @date 2019-04-08 23:49:37
  */
-public interface IUserInfoService extends IBaseService<UserInfoVo>{
+public interface IUserInfoService extends IService<UserInfoVo>{
 	
 }
 

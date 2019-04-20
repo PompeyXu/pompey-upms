@@ -3,8 +3,9 @@ package com.pompey.upms.system.model;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * @ClassName: UserInfo
@@ -13,7 +14,7 @@ import javax.persistence.Transient;
  * @date: 2019-04-07 17:37
  *
  */
-@Table(name="sys_user_info")
+@TableName(value = "sys_user_info")
 public class DemoVo implements java.io.Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -21,6 +22,7 @@ public class DemoVo implements java.io.Serializable{
 	/**
 	 * 用户id
 	 */
+	@TableId
 	private String resourceId;
 	/**
 	 * 登录账号
@@ -37,9 +39,10 @@ public class DemoVo implements java.io.Serializable{
 	 */
 	private String password;
 	
-	@Transient
+	@TableField(exist = false)
 	private LocalDateTime updateDateTime;
-	@Transient
+	
+	@TableField(exist = false)
 	private Date crateDateTime;
 	
 	

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pompey.upms.system.mapper.RoleMapper">
+	<resultMap type="com.pompey.upms.system.model.RoleVo" id="resultMap">
+		
+	</resultMap>
+
+	<sql id="columnList">
+		a.resource_id,
+		a.role_name,
+		a.role_type,
+		a.role_sort,
+		a.is_sys,
+		a.status,
+		a.create_by,
+		a.create_date,
+		a.update_by,
+		a.update_date,
+		a.remarks,
+		a.org_id,
+		a.org_name,
+		a.org_full_id
+	</sql>
+
+
+	<!-- 查询列表 -->
+	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_role a
+	</select>
+
+	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
+		SELECT
+		<include refid="columnList" />
+		FROM sys_role a
+		where resource_id=#{resourceId,jdbcType=INTEGER}
+	</select>
+
+</mapper>

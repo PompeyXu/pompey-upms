@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.SystemLogVo;
 
 
@@ -9,7 +9,7 @@ import com.pompey.upms.system.model.SystemLogVo;
 * @author PompeyXu
 * @date 2019-04-11 23:18:25
  */
-public interface ISystemLogService extends IBaseService<SystemLogVo>{
+public interface ISystemLogService extends IService<SystemLogVo>{
 	
 }
 

@@ -2,7 +2,8 @@ package com.pompey.upms.common.model;
 
 import java.util.Date;
 
-import javax.persistence.Id;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,7 +17,7 @@ public class BaseVo implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@ApiModelProperty(value="主键id")
-	@Id
+	@TableId(type = IdType.UUID)
 	private String resourceId;
 	
 	@ApiModelProperty(value="创建者")

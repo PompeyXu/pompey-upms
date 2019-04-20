@@ -1,6 +1,6 @@
 package com.pompey.upms.system.service;
 
-import com.pompey.upms.common.service.IBaseService;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.model.DictDataVo;
 
 /**
@@ -8,7 +8,7 @@ import com.pompey.upms.system.model.DictDataVo;
 * @author PompeyXu
 * @date 2019-04-11 23:19:19
  */
-public interface IDictDataService extends IBaseService<DictDataVo>{
+public interface IDictDataService extends IService<DictDataVo>{
 	
 }
 

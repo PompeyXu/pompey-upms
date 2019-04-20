@@ -2,7 +2,7 @@ package com.pompey.upms.system.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.pompey.upms.common.mapper.PompeyMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pompey.upms.system.model.OrganizationVo;
 
 /**
@@ -11,6 +11,6 @@ import com.pompey.upms.system.model.OrganizationVo;
 * @date 2019-04-11 23:30:06
  */
 @Mapper
-public interface IOrganizationMapper extends PompeyMapper<OrganizationVo>{
+public interface OrganizationMapper extends BaseMapper<OrganizationVo>{
 	
 }

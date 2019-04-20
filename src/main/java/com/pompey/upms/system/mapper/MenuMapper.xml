@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pompey.upms.system.mapper.IOrganizationMapper">
-	<resultMap type="com.pompey.upms.system.model.OrganizationVo" id="resultMap">
+<mapper namespace="com.pompey.upms.system.mapper.MenuMapper">
+	<resultMap type="com.pompey.upms.system.model.MenuVo" id="resultMap">
 		
 	</resultMap>
 
 	<sql id="columnList">
 		a.resource_id,
-		a.org_name,
-		a.org_code,
-		a.org_level,
-		a.sort_number,
-		a.org_leaf,
 		a.parent_id,
-		a.parent_org_id,
-		a.parent_parent_ids,
-		a.full_names,
-		a.area_code,
+		a.parent_ids,
+		a.parent_names,
+		a.sort_number,
+		a.menu_leaf,
+		a.menu_level,
+		a.menu_name,
+		a.menu_type,
+		a.menu_href,
+		a.menu_target,
+		a.menu_icon,
+		a.menu_color,
+		a.permission,
+		a.weight,
+		a.is_show,
+		a.sys_code,
+		a.module_codes,
 		a.status,
 		a.create_by,
 		a.create_date,
@@ -25,20 +32,12 @@
 		a.remarks,
 		a.extend_s1,
 		a.extend_s2,
-		a.extend_s3,
-		a.extend_s4,
 		a.extend_i1,
 		a.extend_i2,
-		a.extend_i3,
-		a.extend_i4,
 		a.extend_f1,
 		a.extend_f2,
-		a.extend_f3,
-		a.extend_f4,
 		a.extend_d1,
-		a.extend_d2,
-		a.extend_d3,
-		a.extend_d4
+		a.extend_d2
 	</sql>
 
 
@@ -46,13 +45,13 @@
 	<select id="getList" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_organization a
+		FROM sys_menu a
 	</select>
 
 	<select id="getVoById" parameterType="java.util.Map" resultMap="resultMap">
 		SELECT
 		<include refid="columnList" />
-		FROM sys_organization a
+		FROM sys_menu a
 		where resource_id=#{resourceId,jdbcType=INTEGER}
 	</select>
 
