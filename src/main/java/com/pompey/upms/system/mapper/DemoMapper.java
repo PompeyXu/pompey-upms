@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.pompey.upms.system.model.DemoVo;
+import com.pompey.upms.system.entity.DemoVo;
 
 /**
  * @ClassName: IDemoMapper

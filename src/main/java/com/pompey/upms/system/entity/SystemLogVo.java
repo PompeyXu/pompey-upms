@@ -1,4 +1,4 @@
-package com.pompey.upms.system.model;
+package com.pompey.upms.system.entity;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("操作日志表")
 @TableName(value = "sys_system_log")
-public class SystemLogVo extends BaseVo{
+public class SystemLogVo extends BaseVo<SystemLogVo>{
 	
 	private static final long serialVersionUID = 1L;
 

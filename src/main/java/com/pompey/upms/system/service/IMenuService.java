@@ -1,7 +1,7 @@
 package com.pompey.upms.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pompey.upms.system.model.MenuVo;
+import com.pompey.upms.system.entity.MenuVo;
 
 /**
 * 菜单表Service接口

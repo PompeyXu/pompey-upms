@@ -1,7 +1,7 @@
 package com.pompey.upms.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pompey.upms.system.model.SystemConfigVo;
+import com.pompey.upms.system.entity.SystemConfigVo;
 
 /**
 * 参数配置表Service接口

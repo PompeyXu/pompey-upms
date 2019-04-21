@@ -3,7 +3,7 @@ package com.pompey.upms.system.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.pompey.upms.system.model.DictDataVo;
+import com.pompey.upms.system.entity.DictDataVo;
 
 /**
 * 字典数据表Mapper

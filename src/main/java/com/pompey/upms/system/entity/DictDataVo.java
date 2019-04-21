@@ -1,4 +1,4 @@
-package com.pompey.upms.system.model;
+package com.pompey.upms.system.entity;
 
 import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("字典数据表")
 @TableName(value = "sys_dict_data")
-public class DictDataVo extends BaseVo{
+public class DictDataVo extends BaseVo<DictDataVo>{
 	
 	private static final long serialVersionUID = 1L;
 	

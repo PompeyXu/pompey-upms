@@ -1,4 +1,4 @@
-package com.pompey.upms.system.model;
+package com.pompey.upms.system.entity;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("菜单表")
 @TableName(value = "sys_menu")
-public class MenuVo extends BaseVo{
+public class MenuVo extends BaseVo<MenuVo>{
 	
 	private static final long serialVersionUID = 1L;
 	

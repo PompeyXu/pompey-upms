@@ -1,4 +1,4 @@
-package com.pompey.upms.system.model;
+package com.pompey.upms.system.entity;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("用户表")
 @TableName(value = "sys_user_info")
-public class UserInfoVo extends BaseVo{
+public class UserInfoVo extends BaseVo<UserInfoVo>{
 	
 	private static final long serialVersionUID = 1L;
 	

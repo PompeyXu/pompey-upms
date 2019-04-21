@@ -4,8 +4,8 @@ package com.pompey.upms.system.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.pompey.upms.system.entity.UserInfoVo;
 import com.pompey.upms.system.mapper.UserInfoMapper;
-import com.pompey.upms.system.model.UserInfoVo;
 import com.pompey.upms.system.service.IUserInfoService;
 
 /**

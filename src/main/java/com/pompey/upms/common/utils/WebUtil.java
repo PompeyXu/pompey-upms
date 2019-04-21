@@ -17,6 +17,12 @@ import org.slf4j.LoggerFactory;
  */
 public class WebUtil {
 	private static final Logger logger = LoggerFactory.getLogger(WebUtil.class);
+	
+	private static final String UNKNOWN = "unknown";
+	private static final String IP_DELIMITER = ",";
+	private static final String LOCAL_IPV4 = "127.0.0.1";
+	private static final String LOCAL_IPV6 = "0:0:0:0:0:0:0:1";
+	
 	/**
 	 * 获取客户端IP
 	 * @param request
@@ -25,25 +31,25 @@ public class WebUtil {
 	 */
     public static final String getHost(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("Proxy-Client-IP");
         }
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("WL-Proxy-Client-IP");
         }
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_CLIENT_IP");
         }
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_X_FORWARDED_FOR");
         }
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("X-Real-IP");
         }
-        if (StringUtils.isEmpty(ip) || "unknown".equalsIgnoreCase(ip)) {
+        if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
         }
-        if (ip != null && ip.indexOf(",") > 0) {
+        if (ip != null && ip.indexOf(IP_DELIMITER) > 0) {
             logger.info(ip);
             // 对于通过多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割
             String[] ips = ip.split(",");
@@ -55,7 +61,7 @@ public class WebUtil {
                 }
             }
         }
-        if ("127.0.0.1".equals(ip) || "0:0:0:0:0:0:0:1".equals(ip)) {
+        if (LOCAL_IPV4.equals(ip) || LOCAL_IPV6.equals(ip)) {
             InetAddress inet = null;
             try { // 根据网卡取本机配置的IP
                 inet = InetAddress.getLocalHost();

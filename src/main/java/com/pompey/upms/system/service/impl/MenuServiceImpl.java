@@ -3,8 +3,8 @@ package com.pompey.upms.system.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.pompey.upms.system.entity.MenuVo;
 import com.pompey.upms.system.mapper.MenuMapper;
-import com.pompey.upms.system.model.MenuVo;
 import com.pompey.upms.system.service.IMenuService;
 
 /**

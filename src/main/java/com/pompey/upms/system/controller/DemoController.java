@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pompey.upms.exception.CustomException;
-import com.pompey.upms.system.model.DemoVo;
+import com.pompey.upms.system.entity.DemoVo;
 import com.pompey.upms.system.service.IDemoService;
 
 /**

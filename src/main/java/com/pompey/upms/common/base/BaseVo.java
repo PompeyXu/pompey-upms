@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @author PompeyXu
  * @date 2019-04-10 23:15
  */
-public abstract class BaseVo implements java.io.Serializable{
+public abstract class BaseVo<T> implements java.io.Serializable{
 	
 	private static final long serialVersionUID = 1L;
 

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pompey.upms.system.mapper.DemoMapper">
 	
-	<resultMap type="com.pompey.upms.system.model.DemoVo" id="BaseResultMap"></resultMap>
+	<resultMap type="com.pompey.upms.system.entity.DemoVo" id="BaseResultMap"></resultMap>
 	
 	<select id="getUserInfoById" resultMap="BaseResultMap">
 		select resource_id, login_account, user_name, password from sys_user_info where resource_id=${resourceId}

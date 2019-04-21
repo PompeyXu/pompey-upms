@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.pompey.upms.system.model.DemoVo;
+import com.pompey.upms.system.entity.DemoVo;
 import com.pompey.upms.system.service.IDemoService;
 
 @SpringBootTest

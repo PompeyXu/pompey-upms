@@ -1,4 +1,4 @@
-package com.pompey.upms.system.model;
+package com.pompey.upms.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.pompey.upms.common.base.BaseVo;
@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("角色表")
 @TableName(value = "sys_role")
-public class RoleVo extends BaseVo{
+public class RoleVo extends BaseVo<RoleVo>{
 	
 	private static final long serialVersionUID = 1L;
 	

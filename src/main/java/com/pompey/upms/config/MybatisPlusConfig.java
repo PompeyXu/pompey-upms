@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
@@ -49,7 +50,11 @@ public class MybatisPlusConfig {
 		return new LogicSqlInjector();
 	}
 
+	/**
+	 * 设置 dev test 环境开启
+	 */
 	@Bean
+	@Profile({"dev","test"})
 	public PerformanceInterceptor performanceInterceptor() {
 		PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
 		/**
@@ -65,7 +70,6 @@ public class MybatisPlusConfig {
 	
 	/**
      * 乐观锁插件
-     * @return
      */
     public OptimisticLockerInterceptor optimisticLockerInterceptor(){
         return new OptimisticLockerInterceptor();

@@ -1,7 +1,7 @@
 package com.pompey.upms.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pompey.upms.system.model.DictDataVo;
+import com.pompey.upms.system.entity.DictDataVo;
 
 /**
 * 字典数据表Service接口
