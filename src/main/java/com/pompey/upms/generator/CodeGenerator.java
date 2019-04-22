@@ -46,7 +46,7 @@ public class CodeGenerator {
 			"update_date", "org_id", "org_name", "org_full_id", "status" };
 
 	/**
-	 * 项目路径 
+	 * 项目路径
 	 */
 //	private static String projectPath = System.getProperty("user.dir");
 	private static String projectPath = "E://";
@@ -70,9 +70,7 @@ public class CodeGenerator {
 
 	/**
 	 * 
-	 * 代码生成 
-	 * 自定义需要填充的字段 
-	 * List<TableFill> tableFillList = new ArrayList<>();
+	 * 代码生成 自定义需要填充的字段 List<TableFill> tableFillList = new ArrayList<>();
 	 * tableFillList.add(new TableFill("ASDD_SS", FieldFill.INSERT_UPDATE));
 	 */
 	public static void main(String[] args) {
@@ -87,13 +85,9 @@ public class CodeGenerator {
 	}
 
 	/**
-	 * 全局配置 
-	 * .setKotlin(true) 是否生成 kotlin 代码 
-	 * .setMapperName("%sDao")
-	 * .setXmlName("%sDao") 
-	 * .setServiceName("MP%sService")
-	 * .setServiceImplName("%sServiceDiy") 
-	 * .setControllerName("%sAction")
+	 * 全局配置 .setKotlin(true) 是否生成 kotlin 代码 .setMapperName("%sDao")
+	 * .setXmlName("%sDao") .setServiceName("MP%sService")
+	 * .setServiceImplName("%sServiceDiy") .setControllerName("%sAction")
 	 */
 	public static GlobalConfig buildGlobalConfig() {
 		return new GlobalConfig()
@@ -109,6 +103,8 @@ public class CodeGenerator {
 				.setBaseResultMap(true)
 				// XML columList
 				.setBaseColumnList(true)
+				// 启动swagger注释
+				.setSwagger2(true)
 				// 作者
 				.setAuthor("PompeyXu")
 				// 自定义文件命名，注意 %s 会自动填充表实体属性！
@@ -133,12 +129,9 @@ public class CodeGenerator {
 	}
 
 	/**
-	 * 策略配置 
-	 * .setCapitalMode(true)// 全局大写命名 
-	 * .setDbColumnUnderline(true)//全局下划线命名
-	 * .setInclude(new String[] { "user" }) // 需要生成的表 
-	 * .setExclude(new String[]{"test"}) // 排除生成的表 
-	 * .setTableFillList(tableFillList) //自动填充字段
+	 * 策略配置 .setCapitalMode(true)// 全局大写命名 .setDbColumnUnderline(true)//全局下划线命名
+	 * .setInclude(new String[] { "user" }) // 需要生成的表 .setExclude(new
+	 * String[]{"test"}) // 排除生成的表 .setTableFillList(tableFillList) //自动填充字段
 	 * .setSuperMapperClass("com.TestMapper") //自定义 mapper 父类
 	 * .setSuperServiceClass("com.demo.TestService") //自定义 service 父类
 	 * .setSuperServiceImplClass("com.demo.TestServiceImpl") //自定义 service 实现类父类
@@ -147,26 +140,25 @@ public class CodeGenerator {
 	 * .setEntityBuilderModel(true) //【实体】是否为构建者模型（默认 false）
 	 * .setEntityLombokModel(true) //【实体】是否为lombok模型（默认 false）
 	 * .setEntityBooleanColumnRemoveIsPrefix(true) //Boolean类型字段是否移除is前缀处理
-	 * .setRestControllerStyle(true) 
-	 * .setControllerMappingHyphenStyle(true)
+	 * .setRestControllerStyle(true) .setControllerMappingHyphenStyle(true)
 	 */
 	public static StrategyConfig buildStrategy() {
 		String tables = scanner("表名(多个英文逗号分割,全部 all)");
 		StrategyConfig strategyConfig = new StrategyConfig();
 		// 此处可以修改为您的表前缀
 		strategyConfig.setTablePrefix(new String[] { "sys_" })
-			// 表名生成策略
-			.setNaming(NamingStrategy.underline_to_camel)
-			// 自定义实体父类
-			.setSuperEntityClass("com.pompey.upms.common.base.BaseVo")
-			// 自定义实体，公共字段
-			.setSuperEntityColumns(superEntityColumns);
-		
-		if(!ALL.equalsIgnoreCase(tables)) {
-			//需要生成哪些表
+				// 表名生成策略
+				.setNaming(NamingStrategy.underline_to_camel)
+				// 自定义实体父类
+				.setSuperEntityClass("com.pompey.upms.common.base.BaseVo")
+				// 自定义实体，公共字段
+				.setSuperEntityColumns(superEntityColumns);
+
+		if (!ALL.equalsIgnoreCase(tables)) {
+			// 需要生成哪些表
 			strategyConfig.setInclude(tables.split(","));
 		}
-		
+
 		// 策略配置
 		return strategyConfig;
 	}
@@ -189,23 +181,18 @@ public class CodeGenerator {
 			public String outputFile(TableInfo tableInfo) {
 				// 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
 				String packagePath = PACKAGEPATH.replace(".", "/");
-				StringBuffer xmlPath= new StringBuffer(projectPath).append("/src/main/java/")
-						.append(packagePath).append("/").append(moduleName).append("/mapper/")
-						.append(tableInfo.getXmlName()).append(StringPool.DOT_XML); 
+				StringBuffer xmlPath = new StringBuffer(projectPath).append("/src/main/java/").append(packagePath)
+						.append("/").append(moduleName).append("/mapper/").append(tableInfo.getXmlName())
+						.append(StringPool.DOT_XML);
 				return xmlPath.toString();
 			}
 		}));
 	}
 
 	/**
-	 * 模板配置 
-	 * 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 
-	 * 使用 copy 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置： 
-	 * .setController("...")
-	 * .setEntity("...") 
-	 * .setMapper("...") 
-	 * .setXml("...") 
-	 * .setService("...")
+	 * 模板配置 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy 至您项目
+	 * src/main/resources/template 目录下，模板名称也可自定义如下配置： .setController("...")
+	 * .setEntity("...") .setMapper("...") .setXml("...") .setService("...")
 	 * .setServiceImpl("...")
 	 */
 	public static TemplateConfig buildTemplate() {

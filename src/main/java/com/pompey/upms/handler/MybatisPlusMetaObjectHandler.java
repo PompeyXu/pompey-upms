@@ -11,13 +11,14 @@ import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 
 /**
  * mybatisPlus 自动填充
+ * 
  * @author PompeyXu
  * @date 2019-04-20 20:06
  *
  */
 @Component
-public class MybatisPlusMetaObjectHandler implements MetaObjectHandler{
-	
+public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
+
 	private static final Logger logger = LoggerFactory.getLogger(MybatisPlusMetaObjectHandler.class);
 
 	/**
@@ -36,7 +37,7 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler{
 	public void updateFill(MetaObject metaObject) {
 		logger.info("start insert fill ...");
 		this.setFieldValByName("updateDate", new Date(), metaObject);
-		
+
 	}
 
 }

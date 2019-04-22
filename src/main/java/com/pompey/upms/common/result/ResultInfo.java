@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 返回结果包装类
+ * 
  * @author PompeyXu
  * @date 2019-04-20 19:52
  */
@@ -15,10 +16,10 @@ public class ResultInfo<T> {
 
 	@ApiModelProperty(value = "编码")
 	private int code;
-	
+
 	@ApiModelProperty(value = "数据")
 	private T data;
-	
+
 	@ApiModelProperty(value = "消息")
 	private String msg;
 
@@ -29,10 +30,10 @@ public class ResultInfo<T> {
 	public ResultInfo(T data) {
 		super();
 		this.data = data;
-		this.code = 0;
-		this.msg = "success";
+		this.code = ResultEnum.SUCCESS.getCode();
+		this.msg = ResultEnum.SUCCESS.getMsg();
 	}
-	
+
 	public ResultInfo(int code, T data, String msg) {
 		super();
 		this.code = code;
@@ -46,28 +47,20 @@ public class ResultInfo<T> {
 		this.data = null;
 		this.msg = msg;
 	}
-	
+
 	/**
-	 * 返回成功
-	 * @param data
-	 * @param msg
-	 * @return
-	 * @throws
+	 * 返回成功 @param data @param msg @return @throws
 	 */
 	public static <T> ResultInfo<T> success(T data, String msg) {
-		return new ResultInfo<T>(ResultConstants.SUCCESS.getCode(), 
-				data, 
-				StringUtils.isEmpty(msg) ? ResultConstants.SUCCESS.getMsg() : msg);
+		return new ResultInfo<T>(ResultEnum.SUCCESS.getCode(), data,
+				StringUtils.isEmpty(msg) ? ResultEnum.SUCCESS.getMsg() : msg);
 	}
-	
+
 	/**
-	 * 返回失败
-	 * @param msg
-	 * @return
-	 * @throws
+	 * 返回失败 @param msg @return @throws
 	 */
-	public static <T> ResultInfo<T> fail(String msg){
-		return new ResultInfo<T>(ResultConstants.FAIL.getCode(), msg);
+	public static <T> ResultInfo<T> fail(String msg) {
+		return new ResultInfo<T>(ResultEnum.FAIL.getCode(), msg);
 	}
 
 	public int getCode() {
@@ -93,6 +86,5 @@ public class ResultInfo<T> {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	
-	
+
 }

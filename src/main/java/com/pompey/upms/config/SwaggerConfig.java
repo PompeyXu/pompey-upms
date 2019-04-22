@@ -21,21 +21,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(name="swagger.enable",havingValue = "true")
+@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
 public class SwaggerConfig {
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(new ApiInfoBuilder()
-                        .title("标题：upms_接口文档")
-                        .description("upms接口信息")
-                        .contact(new Contact("Socks", null, null))
-                        .version("版本号:1.0")
-                        .build())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.pompey.upms.system.controller"))
-                .paths(PathSelectors.any())
-                .build();
+				.apiInfo(new ApiInfoBuilder().title("标题：upms_接口文档").description("upms接口信息")
+						.contact(new Contact("Socks", null, null)).version("版本号:1.0").build())
+				.select().apis(RequestHandlerSelectors.basePackage("com.pompey.upms.system.controller"))
+				.paths(PathSelectors.any()).build();
 	}
-	
+
 }

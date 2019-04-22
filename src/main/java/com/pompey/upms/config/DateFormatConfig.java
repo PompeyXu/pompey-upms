@@ -25,36 +25,38 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 public class DateFormatConfig {
 	private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    /**
-     * @ClassName: DateJsonSerializer
-     * @Description: 日期格式化
-     * @author Pompey
-     * @date: 2019-04-08 22:35
-     *
-     */
-    public static class DateJsonSerializer extends JsonSerializer<Date> {
-        @Override
-        public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-            jsonGenerator.writeString(dateFormat.format(date));
-        }
-    }
+	/**
+	 * @ClassName: DateJsonSerializer
+	 * @Description: 日期格式化
+	 * @author Pompey
+	 * @date: 2019-04-08 22:35
+	 *
+	 */
+	public static class DateJsonSerializer extends JsonSerializer<Date> {
+		@Override
+		public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
+				throws IOException {
+			jsonGenerator.writeString(dateFormat.format(date));
+		}
+	}
 
-    /**
-     * @ClassName: DateJsonDeserializer
-     * @Description: 解析日期字符串
-     * @author Pompey
-     * @date: 2019-04-08 22:35
-     *
-     */
-    public static class DateJsonDeserializer extends JsonDeserializer<Date> {
-        @Override
-        public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-            try {
-                return dateFormat.parse(jsonParser.getText());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+	/**
+	 * @ClassName: DateJsonDeserializer
+	 * @Description: 解析日期字符串
+	 * @author Pompey
+	 * @date: 2019-04-08 22:35
+	 *
+	 */
+	public static class DateJsonDeserializer extends JsonDeserializer<Date> {
+		@Override
+		public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
+				throws IOException, JsonProcessingException {
+			try {
+				return dateFormat.parse(jsonParser.getText());
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
 
-        }
-    }
+		}
+	}
 }

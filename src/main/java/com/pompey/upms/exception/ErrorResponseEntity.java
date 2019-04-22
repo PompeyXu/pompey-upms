@@ -9,12 +9,12 @@ package com.pompey.upms.exception;
  */
 public class ErrorResponseEntity {
 	private int code;
-    private String message;
+	private String message;
 
-    public ErrorResponseEntity(int code, String message) {
-        this.code = code;
-        this.message = message;
-    }
+	public ErrorResponseEntity(int code, String message) {
+		this.code = code;
+		this.message = message;
+	}
 
 	public int getCode() {
 		return code;
@@ -31,5 +31,5 @@ public class ErrorResponseEntity {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-    
+
 }

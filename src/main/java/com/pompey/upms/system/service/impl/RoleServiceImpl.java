@@ -8,12 +8,12 @@ import com.pompey.upms.system.mapper.RoleMapper;
 import com.pompey.upms.system.service.IRoleService;
 
 /**
-* 角色表Service
-* @author PompeyXu
-* @date 2019-04-11 23:17:39
- */
+ * 角色表Service
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:17:39  
+ */
 @Service
-public class RoleServiceImpl extends ServiceImpl<RoleMapper, RoleVo> implements IRoleService{
-	
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, RoleVo> implements IRoleService {
 
 }

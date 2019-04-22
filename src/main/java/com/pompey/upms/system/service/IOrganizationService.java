@@ -4,11 +4,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.entity.OrganizationVo;
 
 /**
-* 组织表Service接口
-* @author PompeyXu
-* @date 2019-04-11 23:30:06
- */
-public interface IOrganizationService extends IService<OrganizationVo>{
-	
-}
+ * 组织表Service接口
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:30:06  
+ */
+public interface IOrganizationService extends IService<OrganizationVo> {
 
+}

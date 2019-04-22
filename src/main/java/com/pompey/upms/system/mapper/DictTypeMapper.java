@@ -6,11 +6,12 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pompey.upms.system.entity.DictTypeVo;
 
 /**
-* 字典类型表Mapper
-* @author PompeyXu
-* @date 2019-04-11 23:18:44
- */
+ * 字典类型表Mapper
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:18:44  
+ */
 @Mapper
-public interface DictTypeMapper extends BaseMapper<DictTypeVo>{
-	
+public interface DictTypeMapper extends BaseMapper<DictTypeVo> {
+
 }

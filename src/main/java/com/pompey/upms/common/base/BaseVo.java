@@ -10,42 +10,42 @@ import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 公共属性基类
+ * 
  * @author PompeyXu
  * @date 2019-04-10 23:15
  */
-public abstract class BaseVo<T> implements java.io.Serializable{
-	
+public abstract class BaseVo<T> implements java.io.Serializable {
+
 	private static final long serialVersionUID = 1L;
 
-	@ApiModelProperty(value="主键id")
+	@ApiModelProperty(value = "主键id")
 	@TableId(type = IdType.UUID)
 	private String resourceId;
-	
-	@ApiModelProperty(value="创建者")
+
+	@ApiModelProperty(value = "创建者")
 	private String createBy;
-	
-	@ApiModelProperty(value="创建时间")
+
+	@ApiModelProperty(value = "创建时间")
 	private Date createDate;
-	
-	@ApiModelProperty(value="更新者")
+
+	@ApiModelProperty(value = "更新者")
 	private String updateBy;
-	
-	@ApiModelProperty(value="更新时间")
+
+	@ApiModelProperty(value = "更新时间")
 	private Date updateDate;
-	
-	@ApiModelProperty(value="所属组织id")
+
+	@ApiModelProperty(value = "所属组织id")
 	private String orgId;
-	
-	@ApiModelProperty(value="所属组织名称")
+
+	@ApiModelProperty(value = "所属组织名称")
 	private String orgName;
-	
-	@ApiModelProperty(value="所属组织id")
+
+	@ApiModelProperty(value = "所属组织id")
 	private String orgFullId;
-	
-	@ApiModelProperty(value="状态（0正常 1删除）")
+
+	@ApiModelProperty(value = "状态（N正常 Y删除）")
 	@TableLogic
 	private String status;
-	
 
 	public String getResourceId() {
 		return resourceId;
@@ -122,5 +122,5 @@ public abstract class BaseVo<T> implements java.io.Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }

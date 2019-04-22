@@ -42,8 +42,7 @@ public class MybatisPlusConfig {
 	}
 
 	/**
-	 * 逻辑删除插件
-	 * 在vo上逻辑删除字段上添加 @TableLogic 
+	 * 逻辑删除插件 在vo上逻辑删除字段上添加 @TableLogic
 	 */
 	@Bean
 	public ISqlInjector sqlInjector() {
@@ -54,7 +53,7 @@ public class MybatisPlusConfig {
 	 * 设置 dev test 环境开启
 	 */
 	@Bean
-	@Profile({"dev","test"})
+	@Profile({ "dev", "test" })
 	public PerformanceInterceptor performanceInterceptor() {
 		PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
 		/**
@@ -67,12 +66,12 @@ public class MybatisPlusConfig {
 		performanceInterceptor.setFormat(true);
 		return performanceInterceptor;
 	}
-	
+
 	/**
-     * 乐观锁插件
-     */
-    public OptimisticLockerInterceptor optimisticLockerInterceptor(){
-        return new OptimisticLockerInterceptor();
-    }
+	 * 乐观锁插件
+	 */
+	public OptimisticLockerInterceptor optimisticLockerInterceptor() {
+		return new OptimisticLockerInterceptor();
+	}
 
 }

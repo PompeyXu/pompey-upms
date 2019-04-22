@@ -4,11 +4,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.entity.UserInfoVo;
 
 /**
-* 用户表Service接口
-* @author PompeyXu
-* @date 2019-04-08 23:49:37
- */
-public interface IUserInfoService extends IService<UserInfoVo>{
-	
-}
+ * 用户表Service接口
+ * 
+ * @author PompeyXu
+ * @date 2019-04-08 23:49:37  
+ */
+public interface IUserInfoService extends IService<UserInfoVo> {
 
+}

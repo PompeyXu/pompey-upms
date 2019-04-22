@@ -1,4 +1,4 @@
-package com.pompey.upms.common;
+package com.pompey.upms.support;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,12 +8,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * 上下文获取类
+ * 
  * @author PompeyXu
  * @date 2019-04-21 00:51
  */
+@Component
 public class ApplicationContextHolder implements ApplicationContextAware {
 
 	private static Logger logger = LoggerFactory.getLogger(ApplicationContextHolder.class);
@@ -24,6 +27,13 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		ApplicationContextHolder.applicationContext = applicationContext;
 	}
+	
+	/**
+	 * 获得applicationContext
+	 */
+    public static ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
 
 	public static <T> T getBean(Class<T> t) {
 		return applicationContext.getBean(t);
@@ -36,16 +46,16 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 	public static Object getBean(String name) {
 		return applicationContext.getBean(name);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static <T> T getService(Class<T> cls) {
 		String clsName = cls.getName();
-		T service = (T)SERVICE_FACTORY.get(clsName);
-		if(service == null) {
+		T service = (T) SERVICE_FACTORY.get(clsName);
+		if (service == null) {
 			service = ApplicationContextHolder.getBean(cls);
 			SERVICE_FACTORY.put(clsName, service);
 		}
 		return service;
 	}
-	
+
 }

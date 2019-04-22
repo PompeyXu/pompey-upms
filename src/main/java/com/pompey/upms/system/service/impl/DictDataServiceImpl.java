@@ -8,12 +8,12 @@ import com.pompey.upms.system.mapper.DictDataMapper;
 import com.pompey.upms.system.service.IDictDataService;
 
 /**
-* 字典数据表Service
-* @author PompeyXu
-* @date 2019-04-11 23:19:19
- */
+ * 字典数据表Service
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:19:19  
+ */
 @Service
-public class DictDataServiceImpl extends ServiceImpl<DictDataMapper, DictDataVo> implements IDictDataService{
-	
-	
+public class DictDataServiceImpl extends ServiceImpl<DictDataMapper, DictDataVo> implements IDictDataService {
+
 }

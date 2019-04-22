@@ -8,12 +8,13 @@ import com.pompey.upms.system.mapper.SystemConfigMapper;
 import com.pompey.upms.system.service.ISystemConfigService;
 
 /**
-* 参数配置表Service
-* @author PompeyXu
-* @date 2019-04-11 23:20:20
- */
+ * 参数配置表Service
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:20:20  
+ */
 @Service
-public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, SystemConfigVo> implements ISystemConfigService{
-	
+public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, SystemConfigVo>
+		implements ISystemConfigService {
 
 }

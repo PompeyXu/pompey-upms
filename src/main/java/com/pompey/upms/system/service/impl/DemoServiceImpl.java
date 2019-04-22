@@ -9,16 +9,16 @@ import com.pompey.upms.system.service.IDemoService;
 
 /**
  * @ClassName: DemoServiceImpl
- * @Description: 测试service 
+ * @Description: 测试service
  * @author PompeyXu
  * @date: 2019-04-09 21:37
  *
  */
 @Service
-public class DemoServiceImpl extends ServiceImpl<DemoMapper, DemoVo> implements IDemoService{
-	
+public class DemoServiceImpl extends ServiceImpl<DemoMapper, DemoVo> implements IDemoService {
+
 //	private final static Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
-	
+
 	@Override
 	public DemoVo getUserInfoById(String id) {
 		return getBaseMapper().getUserInfoById(id);
@@ -41,8 +41,5 @@ public class DemoServiceImpl extends ServiceImpl<DemoMapper, DemoVo> implements 
 //		
 //		
 //	}
-	
-	
-	
-	
+
 }

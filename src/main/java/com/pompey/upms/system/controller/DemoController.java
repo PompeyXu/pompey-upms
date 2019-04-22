@@ -16,7 +16,7 @@ import com.pompey.upms.system.service.IDemoService;
 
 /**
  * @ClassName: DemoController
- * @Description: 测试controller 
+ * @Description: 测试controller
  * @author PompeyXu
  * @date: 2019-04-09 21:38
  *
@@ -26,31 +26,32 @@ public class DemoController {
 
 	@Autowired
 	IDemoService demoService;
-	
+
 	@GetMapping("/test")
-    public String test(Integer num) {
-        if (num == null) {
-            throw new CustomException(400, "num不能为空");
-        }
-        int i = 10 / num;
-        return "result:" + i;
-    }
-	
+	public String test(Integer num) {
+		if (num == null) {
+			throw new CustomException(400, "num不能为空");
+		}
+		int i = 10 / num;
+		return "result:" + i;
+	}
+
 	@GetMapping("/time")
-    public Object time() {
+	public Object time() {
 		DemoVo vo = new DemoVo();
 		vo.setUpdateDateTime(LocalDateTime.now());
 		vo.setCrateDateTime(new Date());
-        return vo;
-    }
+		return vo;
+	}
+
 	@GetMapping("/list")
 	public Object list() {
 		IPage<DemoVo> pageData = demoService.page(new Page<>(1, 10));
 		return pageData;
 	}
-	
+
 	@GetMapping("/getuser/{id}")
-	public Object getUser(@PathVariable(name = "id")String resourceId) {
+	public Object getUser(@PathVariable(name = "id") String resourceId) {
 		return demoService.getUserInfoById(resourceId);
 	}
 }

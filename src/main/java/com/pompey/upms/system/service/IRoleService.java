@@ -4,11 +4,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.pompey.upms.system.entity.RoleVo;
 
 /**
-* 角色表Service接口
-* @author PompeyXu
-* @date 2019-04-11 23:17:39
- */
-public interface IRoleService extends IService<RoleVo>{
-	
-}
+ * 角色表Service接口
+ * 
+ * @author PompeyXu
+ * @date 2019-04-11 23:17:39  
+ */
+public interface IRoleService extends IService<RoleVo> {
 
+}

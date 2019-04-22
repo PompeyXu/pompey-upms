@@ -17,12 +17,12 @@ public class UserInfoTest {
 
 	@Autowired
 	private IDemoService userInfoService;
-	
+
 	@Test
 	public void testGetUserInfoById() {
 		System.out.println(userInfoService.getUserInfoById("1"));
 	}
-	
+
 	@Test
 	public void testInsert() {
 		DemoVo info = new DemoVo();
@@ -32,17 +32,17 @@ public class UserInfoTest {
 		info.setPassword("123456");
 		userInfoService.insert(info);
 	}
-	
+
 	@Test
 	public void testGetList() {
-		IPage<DemoVo> page = userInfoService.page(new Page<>(1,10));
-		
+		IPage<DemoVo> page = userInfoService.page(new Page<>(1, 10));
+
 		System.out.println(page);
 	}
-	
+
 	@Test
 	public void testDeleteId() {
 //		System.out.println(userInfoService.delete("1"));
 	}
-	
+
 }
