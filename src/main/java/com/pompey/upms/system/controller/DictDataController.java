@@ -1,8 +1,11 @@
 package com.pompey.upms.system.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
+import com.pompey.upms.common.base.BaseController;
+import com.pompey.upms.system.entity.DictData;
+import com.pompey.upms.system.service.impl.DictDataServiceImpl;
+import io.swagger.annotations.Api;
 
 /**
  * <p>
@@ -12,8 +15,9 @@ import org.springframework.stereotype.Controller;
  * @author PompeyXu
  * @since 2019-04-21
  */
-@Controller
-@RequestMapping("/system/dictDataVo")
-public class DictDataController {
+@Api(value = "字典管理", tags = {"字典操作接口"})
+@RestController
+@RequestMapping("/system/dictData")
+public class DictDataController extends BaseController<DictData, DictDataServiceImpl>{
 
 }

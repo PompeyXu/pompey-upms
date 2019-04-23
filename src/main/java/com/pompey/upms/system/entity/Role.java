@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("角色表")
 @TableName(value = "sys_role")
-public class RoleVo extends BaseVo<RoleVo> {
+public class Role extends BaseVo<Role> {
 
 	private static final long serialVersionUID = 1L;
 

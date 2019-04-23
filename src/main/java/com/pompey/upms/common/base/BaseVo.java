@@ -42,10 +42,10 @@ public abstract class BaseVo<T> implements java.io.Serializable {
 
 	@ApiModelProperty(value = "所属组织id")
 	private String orgFullId;
-
-	@ApiModelProperty(value = "状态（N正常 Y删除）")
+	
+	@ApiModelProperty(value = "删除标识(N-未删除 Y-删除")
 	@TableLogic
-	private String status;
+	private String delFlag;
 
 	public String getResourceId() {
 		return resourceId;
@@ -110,13 +110,13 @@ public abstract class BaseVo<T> implements java.io.Serializable {
 	public void setOrgId(String orgId) {
 		this.orgId = orgId;
 	}
-
-	public String getStatus() {
-		return status;
+	
+	public String getDelFlag() {
+		return delFlag;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setDelFlag(String delFlag) {
+		this.delFlag = delFlag;
 	}
 
 	public static long getSerialversionuid() {

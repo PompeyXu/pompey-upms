@@ -2,16 +2,14 @@ package com.pompey.upms.system.controller;
 
 import java.time.LocalDateTime;
 import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pompey.upms.exception.CustomException;
-import com.pompey.upms.system.entity.DemoVo;
+import com.pompey.upms.system.entity.Demo;
 import com.pompey.upms.system.service.IDemoService;
 
 /**
@@ -38,7 +36,7 @@ public class DemoController {
 
 	@GetMapping("/time")
 	public Object time() {
-		DemoVo vo = new DemoVo();
+		Demo vo = new Demo();
 		vo.setUpdateDateTime(LocalDateTime.now());
 		vo.setCrateDateTime(new Date());
 		return vo;
@@ -46,7 +44,7 @@ public class DemoController {
 
 	@GetMapping("/list")
 	public Object list() {
-		IPage<DemoVo> pageData = demoService.page(new Page<>(1, 10));
+		IPage<Demo> pageData = demoService.page(new Page<>(1, 10));
 		return pageData;
 	}
 

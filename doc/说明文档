@@ -1,31 +1,21 @@
-- @Api()用于类； 
-表示标识这个类是swagger的资源 
-- @ApiOperation()用于方法； 
-表示一个http请求的操作 
-- @ApiParam()用于方法，参数，字段说明； 
-表示对参数的添加元数据（说明或是否必填等） 
-- @ApiModel()用于类 
-表示对类进行说明，用于参数用实体类接收 
-- @ApiModelProperty()用于方法，字段 
-表示对model属性的说明或者数据操作更改 
-- @ApiIgnore()用于类，方法，方法参数 
-表示这个方法或者类被忽略 
-- @ApiImplicitParam() 用于方法 
-表示单独的请求参数 
+- @Api()用于类； 表示标识这个类是swagger的资源 
+- @ApiOperation()用于方法； 表示一个http请求的操作 
+- @ApiParam()用于方法，参数，字段说明； 表示对参数的添加元数据（说明或是否必填等） 
+- @ApiModel()用于类 表示对类进行说明，用于参数用实体类接收 
+- @ApiModelProperty()用于方法，字段  表示对model属性的说明或者数据操作更改 
+- @ApiIgnore()用于类，方法，方法参数  表示这个方法或者类被忽略 
+- @ApiImplicitParam() 用于方法  表示单独的请求参数 
 - @ApiImplicitParams() 用于方法，包含多个 @ApiImplicitParam
 具体使用举例说明： 
-@Api() 
-用于类；表示标识这个类是swagger的资源 
+@Api() 用于类；表示标识这个类是swagger的资源 
 tags–表示说明 
-value–也是说明，可以使用tags替代 
-但是tags如果有多个值，会生成多个list
+value–也是说明，可以使用tags替代  但是tags如果有多个值，会生成多个list
 
 
 mybatis plus 使用
 https://mp.baomidou.com/guide/
 
 条件参数说明
-
 查询方式	说明
 setSqlSelect	设置 SELECT 查询字段
 where	WHERE 语句，拼接 + WHERE 条件

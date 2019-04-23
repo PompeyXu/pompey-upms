@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.pompey.upms.system.entity.DemoVo;
+import com.pompey.upms.system.entity.Demo;
 import com.pompey.upms.system.service.IDemoService;
 
 @SpringBootTest
@@ -25,7 +25,7 @@ public class UserInfoTest {
 
 	@Test
 	public void testInsert() {
-		DemoVo info = new DemoVo();
+		Demo info = new Demo();
 		info.setResourceId("1");
 		info.setLoginAccount("zhangsan");
 		info.setUserName("张三");
@@ -35,7 +35,7 @@ public class UserInfoTest {
 
 	@Test
 	public void testGetList() {
-		IPage<DemoVo> page = userInfoService.page(new Page<>(1, 10));
+		IPage<Demo> page = userInfoService.page(new Page<>(1, 10));
 
 		System.out.println(page);
 	}

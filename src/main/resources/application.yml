@@ -28,7 +28,14 @@ spring:
       #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
-
+  devtools:
+    restart:
+      ## 热部署生效
+      enabled: true
+      additional-paths:
+      ## 设置重启的目录
+      - src/main/java
+      
   profiles:
     active: dev
 

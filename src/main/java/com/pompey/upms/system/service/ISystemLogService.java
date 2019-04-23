@@ -1,7 +1,7 @@
 package com.pompey.upms.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pompey.upms.system.entity.SystemLogVo;
+import com.pompey.upms.system.entity.SystemLog;
 
 /**
  * 操作日志表Service接口
@@ -9,6 +9,6 @@ import com.pompey.upms.system.entity.SystemLogVo;
  * @author PompeyXu
  * @date 2019-04-11 23:18:25  
  */
-public interface ISystemLogService extends IService<SystemLogVo> {
+public interface ISystemLogService extends IService<SystemLog> {
 
 }

@@ -1,7 +1,7 @@
 package com.pompey.upms.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pompey.upms.system.entity.DemoVo;
+import com.pompey.upms.system.entity.Demo;
 
 /**
  * @ClassName: IDemoService
@@ -10,7 +10,7 @@ import com.pompey.upms.system.entity.DemoVo;
  * @date: 2019-04-09 21:36
  *
  */
-public interface IDemoService extends IService<DemoVo> {
+public interface IDemoService extends IService<Demo> {
 
 	/**
 	 * 分页获取数据 @return @throws
@@ -20,10 +20,10 @@ public interface IDemoService extends IService<DemoVo> {
 	/**
 	 * 根据id获取用户数据 @param id 主键 @return @throws
 	 */
-	public DemoVo getUserInfoById(String id);
+	public Demo getUserInfoById(String id);
 
 	/**
 	 * 插入数据 @param userInfo 用户数据 @return @throws
 	 */
-	public int insert(DemoVo userInfo);
+	public int insert(Demo userInfo);
 }

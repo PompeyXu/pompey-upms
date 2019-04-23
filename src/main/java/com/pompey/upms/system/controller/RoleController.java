@@ -1,8 +1,11 @@
 package com.pompey.upms.system.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
+import com.pompey.upms.common.base.BaseController;
+import com.pompey.upms.system.entity.Role;
+import com.pompey.upms.system.service.impl.RoleServiceImpl;
+import io.swagger.annotations.Api;
 
 /**
  * <p>
@@ -12,8 +15,9 @@ import org.springframework.stereotype.Controller;
  * @author PompeyXu
  * @since 2019-04-21
  */
-@Controller
-@RequestMapping("/system/roleVo")
-public class RoleController {
+@Api(value = "角色管理", tags = {"角色操作接口"})
+@RestController
+@RequestMapping("/system/role")
+public class RoleController extends BaseController<Role, RoleServiceImpl>{
 
 }

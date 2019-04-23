@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("组织表")
 @TableName(value = "sys_organization")
-public class OrganizationVo extends BaseVo<OrganizationVo> {
+public class Organization extends BaseVo<Organization> {
 
 	private static final long serialVersionUID = 1L;
 

@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("操作日志表")
 @TableName(value = "sys_system_log")
-public class SystemLogVo extends BaseVo<SystemLogVo> {
+public class SystemLog extends BaseVo<SystemLog> {
 
 	private static final long serialVersionUID = 1L;
 

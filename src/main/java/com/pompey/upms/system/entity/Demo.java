@@ -15,7 +15,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  *
  */
 @TableName(value = "sys_user_info")
-public class DemoVo implements java.io.Serializable {
+public class Demo implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 

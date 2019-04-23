@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("参数配置表")
 @TableName(value = "sys_system_config")
-public class SystemConfigVo extends BaseVo<SystemConfigVo> {
+public class SystemConfig extends BaseVo<SystemConfig> {
 
 	private static final long serialVersionUID = 1L;
 

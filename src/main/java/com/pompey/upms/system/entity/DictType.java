@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("字典类型表")
 @TableName(value = "sys_dict_type")
-public class DictTypeVo extends BaseVo<DictDataVo> {
+public class DictType extends BaseVo<DictType> {
 
 	private static final long serialVersionUID = 1L;
 

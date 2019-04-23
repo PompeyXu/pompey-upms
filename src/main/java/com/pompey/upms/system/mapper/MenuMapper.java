@@ -3,7 +3,7 @@ package com.pompey.upms.system.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.pompey.upms.system.entity.MenuVo;
+import com.pompey.upms.system.entity.Menu;
 
 /**
  * 菜单表Mapper
@@ -13,6 +13,6 @@ import com.pompey.upms.system.entity.MenuVo;
  * 
  */
 @Mapper
-public interface MenuMapper extends BaseMapper<MenuVo> {
+public interface MenuMapper extends BaseMapper<Menu> {
 
 }

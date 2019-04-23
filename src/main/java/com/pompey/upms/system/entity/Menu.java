@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("菜单表")
 @TableName(value = "sys_menu")
-public class MenuVo extends BaseVo<MenuVo> {
+public class Menu extends BaseVo<Menu> {
 
 	private static final long serialVersionUID = 1L;
 

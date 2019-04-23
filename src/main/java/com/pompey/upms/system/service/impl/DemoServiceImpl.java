@@ -3,7 +3,7 @@ package com.pompey.upms.system.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.pompey.upms.system.entity.DemoVo;
+import com.pompey.upms.system.entity.Demo;
 import com.pompey.upms.system.mapper.DemoMapper;
 import com.pompey.upms.system.service.IDemoService;
 
@@ -15,17 +15,17 @@ import com.pompey.upms.system.service.IDemoService;
  *
  */
 @Service
-public class DemoServiceImpl extends ServiceImpl<DemoMapper, DemoVo> implements IDemoService {
+public class DemoServiceImpl extends ServiceImpl<DemoMapper, Demo> implements IDemoService {
 
 //	private final static Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
 
 	@Override
-	public DemoVo getUserInfoById(String id) {
+	public Demo getUserInfoById(String id) {
 		return getBaseMapper().getUserInfoById(id);
 	}
 
 	@Override
-	public int insert(DemoVo userInfo) {
+	public int insert(Demo userInfo) {
 		return getBaseMapper().insert(userInfo);
 	}
 
