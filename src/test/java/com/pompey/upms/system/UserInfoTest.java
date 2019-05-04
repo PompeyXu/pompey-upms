@@ -11,6 +11,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pompey.upms.system.entity.Demo;
 import com.pompey.upms.system.service.IDemoService;
 
+/**
+ * 用户测试类
+ * @author PompeyXu
+ * @since 2019-04-23 23:39
+ *
+ */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserInfoTest {

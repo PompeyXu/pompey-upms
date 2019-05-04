@@ -47,9 +47,9 @@ public class CodeGenerator {
 
 	/**
 	 * 项目路径
+	 * private static String projectPath = System.getProperty("user.dir");
 	 */
-//	private static String projectPath = System.getProperty("user.dir");
-	private static String projectPath = "E://";
+	private static String projectPath = "E://mybatisPlus_generator//";
 
 	/**
 	 * 读取控制台内容

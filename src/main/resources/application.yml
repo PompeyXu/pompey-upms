@@ -71,30 +71,3 @@ mybatis-plus:
     #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
     map-underscore-to-camel-case: true
     cache-enabled: false
-
-
-#
-#mybatis:
-#  mapper-locations: classpath*:com/pompey/upms/**/*Mapper.xml
-#  type-aliases-package: com.pompey.upms.**.model
-#  configuration:
-#    ##驼峰命名规范
-#    map-underscore-to-camel-case: true
-#    
-########### 通用Mapper ##########
-#mapper:
-#  identity: mysql
-#  mappers: tk.mybatis.mapper.common.BaseMapper
-#  # 设置 insert 和 update 中，是否判断字符串类型!=''
-#  not-empty: true
-#  # 枚举按简单类型处理
-#  enum-as-simple-type: true
-#  
-########### 分页插件 ##########
-#pagehelper:
-#  helper-dialect: mysql
-#  params: count=countSql
-#  reasonable: false
-#  support-methods-arguments: true
-  
-  
