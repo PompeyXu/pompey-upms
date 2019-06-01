@@ -54,7 +54,7 @@ public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>>
 			@ApiImplicitParam(name = "page", value = "第几页", dataType = "int", required = true, defaultValue = "1", example = "1"),
 			@ApiImplicitParam(name = "pageSize", value = "每页条数", dataType = "int", required = true, defaultValue = "10", example = "10") })
 	@GetMapping("/pagelist/{page}/{pageSize}")
-	public ResultInfo<Object> list(@PathVariable("page") int page, @PathVariable("pageSize") int pageSize,
+	public ResultInfo<Object> pagelist(@PathVariable("page") int page, @PathVariable("pageSize") int pageSize,
 			T t) {
 		QueryWrapper<T> query = new QueryWrapper<>();
 //		query.lambda().eq(StringUtils.isNotBlank(t.getUserName()), UserInfo::getUserName, userInfo.getUserName())

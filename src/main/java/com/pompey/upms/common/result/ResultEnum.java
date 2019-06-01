@@ -11,7 +11,7 @@ public enum ResultEnum {
 	/**
 	 * 成功
 	 */
-	SUCCESS(0, "success"),
+	SUCCESS(20000, "success"),
 
 	/**
 	 * 失败

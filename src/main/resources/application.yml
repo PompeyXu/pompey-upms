@@ -8,7 +8,8 @@ spring:
       #监控统计拦截的filters
       filters: stat
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true&useSSL=false
+      ##&allowMultiQueries=true&useSSL=false&AllowPublicKeyRetrieval=true
+      url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: password
       #配置初始化大小/最小/最大
