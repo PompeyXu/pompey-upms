@@ -1,11 +1,27 @@
 server:
   port: 80
-spring:
-  datasource:
-    name: pompey-upms
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid: 
-      #监控统计拦截的filters
+
+##sharding-jdbc配置
+sharding.jdbc:
+  data-sources:
+    ds_master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: password
+    ds_slave_0:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/pompey-upms2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: password
+  # 逻辑主从库名和实际主从库映射关系
+  master-slave-rule:
+    name: ds_ms
+    master-data-source-name: ds_master
+    slave-data-source-names: ds_slave_0
+    load-balance-algorithm-type: round_robin
+  druid-data-source:
+    #监控统计拦截的filters
       filters: stat
       driver-class-name: com.mysql.cj.jdbc.Driver
       ##&allowMultiQueries=true&useSSL=false&AllowPublicKeyRetrieval=true
@@ -29,6 +45,8 @@ spring:
       #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
+
+spring:
   devtools:
     restart:
       ## 热部署生效
@@ -36,7 +54,6 @@ spring:
       additional-paths:
       ## 设置重启的目录
       - src/main/java
-      
   profiles:
     active: dev
 
@@ -47,7 +64,6 @@ logging:
   config: classpath:logback-spring.xml
   level:
     com.pompey.upms: debug
-
 
 #mybatis plus
 mybatis-plus:

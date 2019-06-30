@@ -18,6 +18,7 @@ import com.pompey.upms.common.result.ResultEnum;
 import com.pompey.upms.common.result.ResultInfo;
 import com.pompey.upms.support.ApplicationContextHolder;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -31,6 +32,7 @@ import io.swagger.annotations.ApiOperation;
  * @param <T>
  * @param <S>
  */
+@Api(value = "系统配置", tags = {"系统配置操作接口"})
 public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>> {
 	private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 	

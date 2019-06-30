@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
@@ -37,7 +38,7 @@ public class MybatisPlusConfig {
 		sqlParser.add(new BlockAttackSqlParser());
 		paginationInterceptor.setSqlParserList(sqlParser);
 
-		paginationInterceptor.setDialectType("mysql");
+		paginationInterceptor.setDialectType(DbType.MYSQL.getDb());
 		return paginationInterceptor;
 	}
 
