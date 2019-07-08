@@ -1,16 +1,16 @@
 package com.pompey.upms.system.controller;
 
-import java.time.LocalDateTime;
-import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pompey.upms.exception.CustomException;
 import com.pompey.upms.system.entity.Demo;
 import com.pompey.upms.system.service.IDemoService;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 /**
  * @ClassName: DemoController
@@ -34,22 +34,19 @@ public class DemoController {
 		return "result:" + i;
 	}
 
-	@GetMapping("/time")
-	public Object time() {
-		Demo vo = new Demo();
-		vo.setUpdateDateTime(LocalDateTime.now());
-		vo.setCrateDateTime(new Date());
-		return vo;
+	@GetMapping("/userInfo/{id}")
+	public Mono<Demo> userInfo(@PathVariable("id") String id) {
+		return Mono.create(t->t.success(demoService.getUserInfoById(id)));
 	}
-
+	
 	@GetMapping("/list")
-	public Object list() {
-		IPage<Demo> pageData = demoService.page(new Page<>(1, 10));
-		return pageData;
+	public Flux<Demo> list(){
+		return Flux.fromIterable(demoService.list());
 	}
-
-	@GetMapping("/getuser/{id}")
-	public Object getUser(@PathVariable(name = "id") String resourceId) {
-		return demoService.getUserInfoById(resourceId);
+	
+	@GetMapping("/page")
+	public Mono<Object> page(){
+		return Mono.create(t->t.success(demoService.page(new Page<Demo>(1, 2))));
 	}
+	
 }

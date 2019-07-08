@@ -4,4 +4,6 @@
 .mvn
 .classpath
 .settings
+.idea
 target/
+pompey-upms.iml

@@ -11,7 +11,7 @@ sharding.jdbc:
       password: password
     ds_slave_0:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/pompey-upms2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: password
   # 逻辑主从库名和实际主从库映射关系
@@ -25,7 +25,6 @@ sharding.jdbc:
       filters: stat
       driver-class-name: com.mysql.cj.jdbc.Driver
       ##&allowMultiQueries=true&useSSL=false&AllowPublicKeyRetrieval=true
-      url: jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: password
       #配置初始化大小/最小/最大

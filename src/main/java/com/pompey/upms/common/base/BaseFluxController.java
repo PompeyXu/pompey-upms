@@ -22,24 +22,25 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 /**
- * 控制层基类
- * 
+ * Flux控制层基类
  * @author PompeyXu
- * @date 2019-04-21 00:55
+ * @data 2019-07-07 11:25:07
  *
  * @param <T>
  * @param <S>
  */
 @Api(value = "系统配置", tags = {"系统配置操作接口"})
-public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>> {
-	private static Logger logger = LoggerFactory.getLogger(BaseController.class);
+public abstract class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
+	private static Logger logger = LoggerFactory.getLogger(BaseFluxController.class);
 	
 	protected S service;
 
 	@SuppressWarnings("unchecked")
-	public BaseController() {
+	public BaseFluxController() {
 		if (service == null) {
 			ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
 			Class<?> cls = (Class<?>) type.getActualTypeArguments()[1];
@@ -56,46 +57,49 @@ public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>>
 			@ApiImplicitParam(name = "page", value = "第几页", dataType = "int", required = true, defaultValue = "1", example = "1"),
 			@ApiImplicitParam(name = "pageSize", value = "每页条数", dataType = "int", required = true, defaultValue = "10", example = "10") })
 	@GetMapping("/pagelist/{page}/{pageSize}")
-	public ResultInfo<Object> pagelist(@PathVariable("page") int page, @PathVariable("pageSize") int pageSize, T entity) {
+	public Mono<ResultInfo<Object>> pagelist(@PathVariable("page") int page, @PathVariable("pageSize") int pageSize, T entity) {
 		QueryWrapper<T> query = new QueryWrapper<>();
 //		query.lambda().eq(StringUtils.isNotBlank(t.getUserName()), UserInfo::getUserName, userInfo.getUserName())
 //				.eq(StringUtils.isNotBlank(userInfo.getPassword()), UserInfo::getPassword, userInfo.getPassword());
 		IPage<T> data = service.page(new Page<>(page, pageSize), query);
-		return ResultInfo.success(data, ResultEnum.SUCCESS.getMsg());
+		ResultInfo<Object> resultInfo = ResultInfo.success(data, ResultEnum.SUCCESS.getMsg());
+		return Mono.create(pageData->pageData.success(resultInfo));
 	}
 
+	@ApiOperation(value = "不分页的查询列表方法")
+	@GetMapping("/list")
+	public Flux<T> list(T entity){
+		QueryWrapper<T> queryWrapper = new QueryWrapper<>();
+		return Flux.fromIterable(service.list(queryWrapper));
+	}
 	
 	@ApiOperation("根据id获取数据")
 	@ApiImplicitParam(name = "resourceId", value = "数据id", dataType = "string", required = true)
 	@GetMapping("/getById/{resourceId}")
-	public ResultInfo<T> selectById(@PathVariable("resourceId") String resourceId) {
-		T resultData = service.getById(resourceId);
-		return new ResultInfo<T>(resultData);
+	public Mono<ResultInfo<T>> selectById(@PathVariable("resourceId") String resourceId) {
+		return Mono.create(data->data.success(new ResultInfo<T>(service.getById(resourceId))));
 	}
 
 
 	@ApiOperation("添加数据")
 	@PostMapping("/insert")
-	public ResultInfo<Object> insert(T t) {
-		boolean resultStatus = service.save(t);
-		return new ResultInfo<Object>(resultStatus);
+	public Mono<ResultInfo<Object>> insert(T entity) {
+		return Mono.create(data->data.success(new ResultInfo<Object>( service.save(entity))));
 	}
 	
 	@ApiOperation("修改数据")
 	@ApiImplicitParam(name = "resourceId", value = "数据id", dataType = "string", required = true)
 	@PutMapping("/update/{resourceId}")
-	public ResultInfo<Object> update(@PathVariable("resourceId") String resourceId, T entity) {
+	public Mono<ResultInfo<Object>> update(@PathVariable("resourceId") String resourceId, T entity) {
 		entity.setResourceId(resourceId);
-		boolean resultStatus = service.updateById(entity);
-		return new ResultInfo<Object>(resultStatus);
+		return Mono.create(data->data.success(new ResultInfo<Object>(service.updateById(entity))));
 	}
 
 	@ApiOperation("删除数据")
 	@ApiImplicitParam(name = "resourceId", value = "用户数据id", dataType = "string", required = true)
 	@DeleteMapping("/delete/{resourceId}")
-	public ResultInfo<Object> delete(@PathVariable("resourceId") String resourceId) {
-		boolean resultStatus = service.removeById(resourceId);
-		return new ResultInfo<Object>(resultStatus);
+	public Mono<ResultInfo<Object>> delete(@PathVariable("resourceId") String resourceId) {
+		return Mono.create(data->data.success(new ResultInfo<Object>(service.removeById(resourceId))));
 	}
 
 	
