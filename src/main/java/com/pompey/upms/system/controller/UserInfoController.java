@@ -28,7 +28,6 @@ import io.swagger.annotations.Api;
 @RequestMapping("/user")
 public class UserInfoController extends BaseController<UserInfo, UserInfoServiceImpl> {
 
-
 	@PostMapping(value = "/login")
 	public ResultInfo<Object> login(){
 		Map<String, Object> data = new HashMap<String, Object>(16);

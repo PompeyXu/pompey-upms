@@ -7,11 +7,13 @@ import com.pompey.upms.common.base.BaseVo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * @author PompeyXu
  * @date 2019-04-11 23:18:25  
  */
+@Data
 @ApiModel("操作日志表")
 @TableName(value = "sys_system_log")
 public class SystemLog extends BaseVo<SystemLog> {
@@ -74,133 +76,5 @@ public class SystemLog extends BaseVo<SystemLog> {
 
 	@ApiModelProperty(value = "执行时间")
 	private String executeTime;
-
-	public String getLogType() {
-		return logType;
-	}
-
-	public void setLogType(String logType) {
-		this.logType = logType;
-	}
-
-	public String getLogTitle() {
-		return logTitle;
-	}
-
-	public void setLogTitle(String logTitle) {
-		this.logTitle = logTitle;
-	}
-
-	public String getRequestUri() {
-		return requestUri;
-	}
-
-	public void setRequestUri(String requestUri) {
-		this.requestUri = requestUri;
-	}
-
-	public String getRequestMethod() {
-		return requestMethod;
-	}
-
-	public void setRequestMethod(String requestMethod) {
-		this.requestMethod = requestMethod;
-	}
-
-	public String getRequestParams() {
-		return requestParams;
-	}
-
-	public void setRequestParams(String requestParams) {
-		this.requestParams = requestParams;
-	}
-
-	public String getDiffModifyData() {
-		return diffModifyData;
-	}
-
-	public void setDiffModifyData(String diffModifyData) {
-		this.diffModifyData = diffModifyData;
-	}
-
-	public String getBizKey() {
-		return bizKey;
-	}
-
-	public void setBizKey(String bizKey) {
-		this.bizKey = bizKey;
-	}
-
-	public String getBizType() {
-		return bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-	}
-
-	public String getRemoteAddr() {
-		return remoteAddr;
-	}
-
-	public void setRemoteAddr(String remoteAddr) {
-		this.remoteAddr = remoteAddr;
-	}
-
-	public String getServerAddr() {
-		return serverAddr;
-	}
-
-	public void setServerAddr(String serverAddr) {
-		this.serverAddr = serverAddr;
-	}
-
-	public String getIsException() {
-		return isException;
-	}
-
-	public void setIsException(String isException) {
-		this.isException = isException;
-	}
-
-	public String getExceptionInfo() {
-		return exceptionInfo;
-	}
-
-	public void setExceptionInfo(String exceptionInfo) {
-		this.exceptionInfo = exceptionInfo;
-	}
-
-	public String getUserAgent() {
-		return userAgent;
-	}
-
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
-
-	public String getDeviceName() {
-		return deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-	}
-
-	public String getBrowserName() {
-		return browserName;
-	}
-
-	public void setBrowserName(String browserName) {
-		this.browserName = browserName;
-	}
-
-	public String getExecuteTime() {
-		return executeTime;
-	}
-
-	public void setExecuteTime(String executeTime) {
-		this.executeTime = executeTime;
-	}
 
 }

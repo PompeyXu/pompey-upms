@@ -1,22 +1,33 @@
 package com.pompey.upms.system.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.pompey.upms.common.base.BaseVo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * @author PompeyXu
  * @date 2019-04-11 23:30:06  
  */
+@Data
 @ApiModel("组织表")
 @TableName(value = "sys_organization")
-public class Organization extends BaseVo<Organization> {
+public class Organization implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	@ApiModelProperty(value = "主键id")
+	@TableId(type = IdType.UUID)
+	private String resourceId;
+
+	@ApiModelProperty(value = "序号")
+	private Integer sortNumber;
 
 	@ApiModelProperty(value = "组织名称")
 	private String orgName;
@@ -26,9 +37,6 @@ public class Organization extends BaseVo<Organization> {
 
 	@ApiModelProperty(value = "层次级别")
 	private String orgLevel;
-
-	@ApiModelProperty(value = "本级排序号（升序）")
-	private String sortNumber;
 
 	@ApiModelProperty(value = "是否最末级")
 	private String orgLeaf;
@@ -50,6 +58,22 @@ public class Organization extends BaseVo<Organization> {
 
 	@ApiModelProperty(value = "备注信息")
 	private String remarks;
+
+	@ApiModelProperty(value = "创建者")
+	private String createBy;
+
+	@ApiModelProperty(value = "创建时间")
+	private Date createDate;
+
+	@ApiModelProperty(value = "更新者")
+	private String updateBy;
+
+	@ApiModelProperty(value = "更新时间")
+	private Date updateDate;
+
+	@ApiModelProperty(value = "删除标识(N-未删除 Y-删除")
+	@TableLogic
+	private String delFlag;
 
 	@ApiModelProperty(value = "扩展 String 1")
 	private String extendS1;
@@ -75,147 +99,9 @@ public class Organization extends BaseVo<Organization> {
 	@ApiModelProperty(value = "扩展 Date 2")
 	private Date extendD2;
 
-	public String getOrgCode() {
-		return orgCode;
-	}
 
-	public void setOrgCode(String orgCode) {
-		this.orgCode = orgCode;
-	}
+	@ApiModelProperty(value = "子对象", hidden = true)
+	@TableField(exist = false)
+	private List<Organization> children = new ArrayList<>();
 
-	public String getOrgLevel() {
-		return orgLevel;
-	}
-
-	public void setOrgLevel(String orgLevel) {
-		this.orgLevel = orgLevel;
-	}
-
-	public String getSortNumber() {
-		return sortNumber;
-	}
-
-	public void setSortNumber(String sortNumber) {
-		this.sortNumber = sortNumber;
-	}
-
-	public String getOrgLeaf() {
-		return orgLeaf;
-	}
-
-	public void setOrgLeaf(String orgLeaf) {
-		this.orgLeaf = orgLeaf;
-	}
-
-	public String getParentId() {
-		return parentId;
-	}
-
-	public void setParentId(String parentId) {
-		this.parentId = parentId;
-	}
-
-	public String getParentOrgId() {
-		return parentOrgId;
-	}
-
-	public void setParentOrgId(String parentOrgId) {
-		this.parentOrgId = parentOrgId;
-	}
-
-	public String getParentParentIds() {
-		return parentParentIds;
-	}
-
-	public void setParentParentIds(String parentParentIds) {
-		this.parentParentIds = parentParentIds;
-	}
-
-	public String getFullNames() {
-		return fullNames;
-	}
-
-	public void setFullNames(String fullNames) {
-		this.fullNames = fullNames;
-	}
-
-	public String getAreaCode() {
-		return areaCode;
-	}
-
-	public void setAreaCode(String areaCode) {
-		this.areaCode = areaCode;
-	}
-
-	public String getRemarks() {
-		return remarks;
-	}
-
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
-
-	public String getExtendS1() {
-		return extendS1;
-	}
-
-	public void setExtendS1(String extendS1) {
-		this.extendS1 = extendS1;
-	}
-
-	public String getExtendS2() {
-		return extendS2;
-	}
-
-	public void setExtendS2(String extendS2) {
-		this.extendS2 = extendS2;
-	}
-
-	public String getExtendI1() {
-		return extendI1;
-	}
-
-	public void setExtendI1(String extendI1) {
-		this.extendI1 = extendI1;
-	}
-
-	public String getExtendI2() {
-		return extendI2;
-	}
-
-	public void setExtendI2(String extendI2) {
-		this.extendI2 = extendI2;
-	}
-
-	public String getExtendF1() {
-		return extendF1;
-	}
-
-	public void setExtendF1(String extendF1) {
-		this.extendF1 = extendF1;
-	}
-
-	public String getExtendF2() {
-		return extendF2;
-	}
-
-	public void setExtendF2(String extendF2) {
-		this.extendF2 = extendF2;
-	}
-
-	public Date getExtendD1() {
-		return extendD1;
-	}
-
-	public void setExtendD1(Date extendD1) {
-		this.extendD1 = extendD1;
-	}
-
-	public Date getExtendD2() {
-		return extendD2;
-	}
-
-	public void setExtendD2(Date extendD2) {
-		this.extendD2 = extendD2;
-	}
 }

@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * 公共属性基类
@@ -14,6 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @author PompeyXu
  * @date 2019-04-10 23:15
  */
+@Data
 public abstract class BaseVo<T> implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,6 +23,9 @@ public abstract class BaseVo<T> implements java.io.Serializable {
 	@ApiModelProperty(value = "主键id")
 	@TableId(type = IdType.UUID)
 	private String resourceId;
+
+	@ApiModelProperty(value = "序号")
+	private Integer sortNumber;
 
 	@ApiModelProperty(value = "创建者")
 	private String createBy;
@@ -46,81 +51,4 @@ public abstract class BaseVo<T> implements java.io.Serializable {
 	@ApiModelProperty(value = "删除标识(N-未删除 Y-删除")
 	@TableLogic
 	private String delFlag;
-
-	public String getResourceId() {
-		return resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-	}
-
-	public String getCreateBy() {
-		return createBy;
-	}
-
-	public void setCreateBy(String createBy) {
-		this.createBy = createBy;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-	public String getUpdateBy() {
-		return updateBy;
-	}
-
-	public void setUpdateBy(String updateBy) {
-		this.updateBy = updateBy;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public String getOrgName() {
-		return orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-	}
-
-	public String getOrgFullId() {
-		return orgFullId;
-	}
-
-	public void setOrgFullId(String orgFullId) {
-		this.orgFullId = orgFullId;
-	}
-
-	public String getOrgId() {
-		return orgId;
-	}
-
-	public void setOrgId(String orgId) {
-		this.orgId = orgId;
-	}
-	
-	public String getDelFlag() {
-		return delFlag;
-	}
-
-	public void setDelFlag(String delFlag) {
-		this.delFlag = delFlag;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 }

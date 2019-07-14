@@ -1,7 +1,9 @@
 package com.pompey.upms.common.base;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
+import com.pompey.upms.common.utils.ClassUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +35,7 @@ import io.swagger.annotations.ApiOperation;
  * @param <S>
  */
 @Api(value = "系统配置", tags = {"系统配置操作接口"})
-public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>> {
+public abstract class BaseController<T extends Serializable, S extends IService<T>> {
 	private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 	
 	protected S service;
@@ -85,7 +87,7 @@ public abstract class BaseController<T extends BaseVo<T>, S extends IService<T>>
 	@ApiImplicitParam(name = "resourceId", value = "数据id", dataType = "string", required = true)
 	@PutMapping("/update/{resourceId}")
 	public ResultInfo<Object> update(@PathVariable("resourceId") String resourceId, T entity) {
-		entity.setResourceId(resourceId);
+		ClassUtil.setAttributeValue(entity,resourceId,"resourceId");
 		boolean resultStatus = service.updateById(entity);
 		return new ResultInfo<Object>(resultStatus);
 	}

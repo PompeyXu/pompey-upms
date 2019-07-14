@@ -27,5 +27,6 @@ public interface DemoMapper extends BaseMapper<Demo> {
 	 * @param userInfo 用户数据
 	 * @return
 	 */
+	@Override
 	public int insert(Demo userInfo);
 }

@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: PompeyUpms启动方法
  * @author PompeyXu
  * @date: 2019-04-09 21:33
- *
  */
 @SpringBootApplication
 public class PompeyUpmsApplication {

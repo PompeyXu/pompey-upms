@@ -25,8 +25,10 @@ public class WebUtil {
 	private static final String LOCAL_IPV6 = "0:0:0:0:0:0:0:1";
 
 	/**
-	 * 获取客户端IP @param request @return @throws
-	 */
+	 * @Description 获取客户端IP
+	 * @Param [request]
+	 * @return java.lang.String
+	 **/
 	public static final String getHost(HttpServletRequest request) {
 		String ip = request.getHeader("X-Forwarded-For");
 		if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {

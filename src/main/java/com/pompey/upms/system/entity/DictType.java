@@ -5,11 +5,13 @@ import com.pompey.upms.common.base.BaseVo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * @author PompeyXu
  * @date 2019-04-11 23:18:44  
  */
+@Data
 @ApiModel("字典类型表")
 @TableName(value = "sys_dict_type")
 public class DictType extends BaseVo<DictType> {
@@ -30,45 +32,5 @@ public class DictType extends BaseVo<DictType> {
 
 	@ApiModelProperty(value = "备注信息")
 	private String remarks;
-
-	public String getDictCode() {
-		return dictCode;
-	}
-
-	public void setDictCode(String dictCode) {
-		this.dictCode = dictCode;
-	}
-
-	public String getDictName() {
-		return dictName;
-	}
-
-	public void setDictName(String dictName) {
-		this.dictName = dictName;
-	}
-
-	public String getDictType() {
-		return dictType;
-	}
-
-	public void setDictType(String dictType) {
-		this.dictType = dictType;
-	}
-
-	public String getIsSys() {
-		return isSys;
-	}
-
-	public void setIsSys(String isSys) {
-		this.isSys = isSys;
-	}
-
-	public String getRemarks() {
-		return remarks;
-	}
-
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
 
 }
