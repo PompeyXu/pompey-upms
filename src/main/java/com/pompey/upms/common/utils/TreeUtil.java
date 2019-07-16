@@ -20,7 +20,7 @@ public class TreeUtil<T> {
     public static<T> List<T> createTree(Object pid, Map<Object, List<T>> map){
         return Optional.ofNullable(map.get(pid)).orElseGet(()->new ArrayList<T>()).stream().filter(x->{
             Object parentId = ClassUtil.getAttributeValue(x,"parentId");
-            return parentId == pid;
+            return parentId.equals(pid);
         }).sorted((x, y)->{
             Integer xSortNo = (Integer) ClassUtil.getAttributeValue(x,"sortNumber");
             Integer ySortNo = (Integer) ClassUtil.getAttributeValue(y,"sortNumber");
@@ -34,7 +34,7 @@ public class TreeUtil<T> {
             }
             BeanUtils.copyProperties(x,y);
             Object parentId = ClassUtil.getAttributeValue(y,"resourceId");
-            ClassUtil.setAttributeValue(y, createTree(parentId,map),"children");
+            ClassUtil.setAttributeValue(y, createTree(parentId, map),"children");
             return y;
         }).collect(Collectors.toList());
     }

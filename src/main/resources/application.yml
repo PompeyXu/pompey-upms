@@ -1,5 +1,7 @@
 server:
   port: 80
+  servlet:
+    context-path: /pompey-upms
 
 ##sharding-jdbc配置
 sharding.jdbc:

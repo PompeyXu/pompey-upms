@@ -28,20 +28,6 @@ import io.swagger.annotations.Api;
 @RequestMapping("/user")
 public class UserInfoController extends BaseController<UserInfo, UserInfoServiceImpl> {
 
-	@PostMapping(value = "/login")
-	public ResultInfo<Object> login(){
-		Map<String, Object> data = new HashMap<String, Object>(16);
-		data.put("token", "admin-token");
-		
-		return ResultInfo.success(data, ResultEnum.SUCCESS.getMsg());
-	}
 
-	@GetMapping(value = "/info")
-	public ResultInfo<Object> info() {
-		Map<String, Object> data = new HashMap<String, Object>(16);
-		data.put("token", "admin-token");
-		
-		return ResultInfo.success(data, ResultEnum.SUCCESS.getMsg());
-	}
 	
 }

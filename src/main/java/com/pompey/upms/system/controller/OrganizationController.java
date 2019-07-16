@@ -45,12 +45,13 @@ public class OrganizationController extends BaseController<Organization, Organiz
         List<Organization> list = null;
         try {
             QueryWrapper queryWrapper = new QueryWrapper();
-            queryWrapper.like("parent_id", parentId);
-            list = organizationService.list(queryWrapper);
+//            queryWrapper.like("parent_id", parentId);
+            List<Organization> sourceData = organizationService.list(queryWrapper);
+            list = TreeUtil.createTree(parentId, sourceData.stream().collect(groupingBy(Organization::getParentId)));
         }catch (Exception e){
             log.error("OrganizationController.treelist()",e);
             return ResultInfo.fail(ResultEnum.FAIL.getMsg());
         }
-        return ResultInfo.success(TreeUtil.createTree(parentId, list.stream().collect(groupingBy(Organization::getParentId))), ResultEnum.SUCCESS.getMsg());
+        return ResultInfo.success(list, ResultEnum.SUCCESS.getMsg());
     }
 }
