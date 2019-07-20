@@ -46,7 +46,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(RuntimeException.class)
 	public ErrorResponseEntity runtimeExceptionHandler(HttpServletRequest request, final Exception e,
 			HttpServletResponse response) {
-		e.printStackTrace();
 		response.setStatus(HttpStatus.BAD_REQUEST.value());
 		RuntimeException exception = (RuntimeException) e;
 		return new ErrorResponseEntity(400, exception.getMessage());

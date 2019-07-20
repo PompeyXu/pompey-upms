@@ -75,22 +75,22 @@ public class UserInfo extends BaseVo<UserInfo> {
 	private String pwdUpdateRecord;
 
 	@ApiModelProperty(value = "密保问题")
-	private String pwdQuestionA;
+	private String pwdQuestionOne;
 
 	@ApiModelProperty(value = "密保问题答案")
-	private String pwdQuestionAnswerA;
+	private String pwdQuestionAnswerOne;
 
 	@ApiModelProperty(value = "密保问题2")
-	private String pwdQuestionB;
+	private String pwdQuestionTwo;
 
 	@ApiModelProperty(value = "密保问题答案2")
-	private String pwdQuestionAnswerB;
+	private String pwdQuestionAnswerTwo;
 
 	@ApiModelProperty(value = "密保问题3")
-	private String pwdQuestionC;
+	private String pwdQuestionThree;
 
 	@ApiModelProperty(value = "密保问题答案3")
-	private String pwdQuestionAnswerC;
+	private String pwdQuestionAnswerThree;
 
 	@ApiModelProperty(value = "密码问题修改时间")
 	private Date pwdQuestUpdateDate;

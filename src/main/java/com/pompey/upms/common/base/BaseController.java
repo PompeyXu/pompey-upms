@@ -35,12 +35,17 @@ import io.swagger.annotations.ApiOperation;
  * @param <S>
  */
 @Api(value = "系统配置", tags = {"系统配置操作接口"})
-public abstract class BaseController<T extends Serializable, S extends IService<T>> {
+public class BaseController<T extends Serializable, S extends IService<T>> {
 	private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 	
 	protected S service;
 
-	@SuppressWarnings("unchecked")
+	/**
+	 * @Description 构造函数
+	 * @Author PompeyXu
+	 * @Param []
+	 * @return
+	 **/
 	public BaseController() {
 		if (service == null) {
 			ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();

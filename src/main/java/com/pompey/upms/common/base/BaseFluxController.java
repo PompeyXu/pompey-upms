@@ -34,7 +34,7 @@ import reactor.core.publisher.Mono;
  * @param <S>
  */
 @Api(value = "系统配置", tags = {"系统配置操作接口"})
-public abstract class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
+public class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
 	private static Logger logger = LoggerFactory.getLogger(BaseFluxController.class);
 	
 	protected S service;

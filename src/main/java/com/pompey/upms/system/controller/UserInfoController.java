@@ -28,6 +28,4 @@ import io.swagger.annotations.Api;
 @RequestMapping("/user")
 public class UserInfoController extends BaseController<UserInfo, UserInfoServiceImpl> {
 
-
-	
 }

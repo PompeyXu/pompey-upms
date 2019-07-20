@@ -1,6 +1,7 @@
 package com.pompey.upms.common.utils;
 
 import com.pompey.upms.system.entity.Organization;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
  * @Description:
  * @date: 2019/7/14 18:22
  */
+@Slf4j
 public class TreeUtil<T> {
 
     public static<T> List<T> createTree(Object pid, Map<Object, List<T>> map){
@@ -30,7 +32,7 @@ public class TreeUtil<T> {
             try {
                y = (T)x.getClass().newInstance();
             } catch (Exception e) {
-                e.printStackTrace();
+               log.error("树转换错误",e);
             }
             BeanUtils.copyProperties(x,y);
             Object parentId = ClassUtil.getAttributeValue(y,"resourceId");
