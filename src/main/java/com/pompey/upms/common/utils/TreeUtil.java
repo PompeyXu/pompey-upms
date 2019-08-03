@@ -1,6 +1,5 @@
 package com.pompey.upms.common.utils;
 
-import com.pompey.upms.system.entity.Organization;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
@@ -20,7 +19,7 @@ import java.util.stream.Collectors;
 public class TreeUtil<T> {
 
     public static<T> List<T> createTree(Object pid, Map<Object, List<T>> map){
-        return Optional.ofNullable(map.get(pid)).orElseGet(()->new ArrayList<T>()).stream().filter(x->{
+        return Optional.ofNullable(map.get(pid)).orElseGet(ArrayList::new).stream().filter(x->{
             Object parentId = ClassUtil.getAttributeValue(x,"parentId");
             return parentId.equals(pid);
         }).sorted((x, y)->{

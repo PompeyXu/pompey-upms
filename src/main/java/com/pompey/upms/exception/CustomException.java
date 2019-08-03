@@ -21,11 +21,11 @@ public class CustomException extends RuntimeException {
 		this.setCode(code);
 	}
 
-	public int getCode() {
+	protected int getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	private void setCode(int code) {
 		this.code = code;
 	}
 }

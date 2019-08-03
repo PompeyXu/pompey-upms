@@ -8,12 +8,14 @@ import com.pompey.upms.common.base.BaseVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author PompeyXu
  * @date 2019-04-08 23:49:37  
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @ApiModel("用户表")
 @TableName(value = "sys_user_info")
 public class UserInfo extends BaseVo<UserInfo> {

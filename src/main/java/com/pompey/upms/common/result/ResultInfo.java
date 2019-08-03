@@ -1,5 +1,6 @@
 package com.pompey.upms.common.result;
 
+import lombok.*;
 import org.springframework.util.StringUtils;
 
 import io.swagger.annotations.ApiModel;
@@ -12,16 +13,19 @@ import io.swagger.annotations.ApiModelProperty;
  * @date 2019-04-20 19:52
  */
 @ApiModel("返回结果")
+@Setter
+@Getter
+@ToString
 public class ResultInfo<T> {
 
-	@ApiModelProperty(value = "编码")
+	@ApiModelProperty(value = "状态响应码")
 	private int code;
 
 	@ApiModelProperty(value = "数据")
 	private T data;
 
 	@ApiModelProperty(value = "消息")
-	private String msg;
+	private String message;
 
 	public ResultInfo() {
 		super();
@@ -31,21 +35,21 @@ public class ResultInfo<T> {
 		super();
 		this.data = data;
 		this.code = ResultEnum.SUCCESS.getCode();
-		this.msg = ResultEnum.SUCCESS.getMsg();
+		this.message = ResultEnum.SUCCESS.getMsg();
 	}
 
-	public ResultInfo(int code, T data, String msg) {
+	private ResultInfo(int code, T data, String message) {
 		super();
 		this.code = code;
 		this.data = data;
-		this.msg = msg;
+		this.message = message;
 	}
 
-	public ResultInfo(int code, String msg) {
+	private ResultInfo(int code, String message) {
 		super();
 		this.code = code;
 		this.data = null;
-		this.msg = msg;
+		this.message = message;
 	}
 
 	/**
@@ -63,28 +67,6 @@ public class ResultInfo<T> {
 		return new ResultInfo<T>(ResultEnum.FAIL.getCode(), msg);
 	}
 
-	public int getCode() {
-		return code;
-	}
 
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	public T getData() {
-		return data;
-	}
-
-	public void setData(T data) {
-		this.data = data;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
 
 }

@@ -14,7 +14,6 @@ import com.pompey.upms.system.service.ISystemConfigService;
  * @date 2019-04-11 23:20:20  
  */
 @Service
-public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, SystemConfig>
-		implements ISystemConfigService {
+public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, SystemConfig> implements ISystemConfigService {
 
 }

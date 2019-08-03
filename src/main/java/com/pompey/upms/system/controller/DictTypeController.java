@@ -8,10 +8,7 @@ import com.pompey.upms.system.service.impl.DictTypeServiceImpl;
 import io.swagger.annotations.Api;
 
 /**
- * <p>
  * 字典类型表 前端控制器
- * </p>
- *
  * @author PompeyXu
  * @since 2019-04-21
  */

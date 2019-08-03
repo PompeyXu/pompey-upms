@@ -2,6 +2,7 @@ package com.pompey.upms.common.base;
 
 import java.lang.reflect.ParameterizedType;
 
+import com.baomidou.mybatisplus.core.toolkit.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,16 +40,13 @@ public class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
 	
 	protected S service;
 
-	@SuppressWarnings("unchecked")
 	public BaseFluxController() {
-		if (service == null) {
-			ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
-			Class<?> cls = (Class<?>) type.getActualTypeArguments()[1];
-			try {
-				service = (S) ApplicationContextHolder.getService(cls);
-			} catch (Exception e) {
-				logger.error("afterPropertiesSet get service error：：：", e);
-			}
+		ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
+		Class<?> cls = (Class<?>) type.getActualTypeArguments()[1];
+		try {
+			service = (S) ApplicationContextHolder.getService(cls);
+		} catch (Exception e) {
+			logger.error("afterPropertiesSet get service error：：：", e);
 		}
 	}
 	
@@ -59,8 +57,7 @@ public class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
 	@GetMapping("/pagelist/{page}/{pageSize}")
 	public Mono<ResultInfo<Object>> pagelist(@PathVariable("page") int page, @PathVariable("pageSize") int pageSize, T entity) {
 		QueryWrapper<T> query = new QueryWrapper<>();
-//		query.lambda().eq(StringUtils.isNotBlank(t.getUserName()), UserInfo::getUserName, userInfo.getUserName())
-//				.eq(StringUtils.isNotBlank(userInfo.getPassword()), UserInfo::getPassword, userInfo.getPassword());
+		query.allEq(true, BeanUtils.beanToMap(entity), false);
 		IPage<T> data = service.page(new Page<>(page, pageSize), query);
 		ResultInfo<Object> resultInfo = ResultInfo.success(data, ResultEnum.SUCCESS.getMsg());
 		return Mono.create(pageData->pageData.success(resultInfo));
@@ -75,7 +72,7 @@ public class BaseFluxController<T extends BaseVo<T>, S extends IService<T>> {
 	
 	@ApiOperation("根据id获取数据")
 	@ApiImplicitParam(name = "resourceId", value = "数据id", dataType = "string", required = true)
-	@GetMapping("/getById/{resourceId}")
+	@GetMapping("/getdata/{resourceId}")
 	public Mono<ResultInfo<T>> selectById(@PathVariable("resourceId") String resourceId) {
 		return Mono.create(data->data.success(new ResultInfo<T>(service.getById(resourceId))));
 	}

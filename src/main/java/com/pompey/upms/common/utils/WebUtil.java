@@ -3,11 +3,11 @@ package com.pompey.upms.common.utils;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * web辅助工具类
@@ -29,7 +29,7 @@ public class WebUtil {
 	 * @Param [request]
 	 * @return java.lang.String
 	 **/
-	public static final String getHost(HttpServletRequest request) {
+	public static String getHost(HttpServletRequest request) {
 		String ip = request.getHeader("X-Forwarded-For");
 		if (StringUtils.isEmpty(ip) || UNKNOWN.equalsIgnoreCase(ip)) {
 			ip = request.getHeader("Proxy-Client-IP");
@@ -54,9 +54,8 @@ public class WebUtil {
 			// 对于通过多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割
 			String[] ips = ip.split(",");
 			for (String ip2 : ips) {
-				String strIp = ip2;
-				if (!"unknown".equalsIgnoreCase(strIp)) {
-					ip = strIp;
+				if (!"unknown".equalsIgnoreCase(ip2)) {
+					ip = ip2;
 					break;
 				}
 			}

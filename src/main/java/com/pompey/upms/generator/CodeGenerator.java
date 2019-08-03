@@ -29,15 +29,13 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  *
  */
 public class CodeGenerator {
-	private static Scanner scanner;
 
 	private static String PACKAGEPATH = "com.pompey.upms";
-	private static String ALL = "all";
 
 	/**
 	 * 模块名称
 	 */
-	private static String moduleName = new String();
+	private static String moduleName = "";
 
 	/**
 	 * 父entity公共字段配置
@@ -54,11 +52,9 @@ public class CodeGenerator {
 	/**
 	 * 读取控制台内容
 	 */
-	public static String scanner(String tip) {
-		scanner = new Scanner(System.in);
-		StringBuilder help = new StringBuilder();
-		help.append("请输入" + tip + "：");
-		System.out.println(help.toString());
+	private static String scanner(String tip) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("请输入" + tip + "：");
 		if (scanner.hasNext()) {
 			String ipt = scanner.next();
 			if (StringUtils.isNotEmpty(ipt)) {
@@ -89,7 +85,7 @@ public class CodeGenerator {
 	 * .setXmlName("%sDao") .setServiceName("MP%sService")
 	 * .setServiceImplName("%sServiceDiy") .setControllerName("%sAction")
 	 */
-	public static GlobalConfig buildGlobalConfig() {
+	private static GlobalConfig buildGlobalConfig() {
 		return new GlobalConfig()
 				// 输出目录
 				.setOutputDir(projectPath + "/src/main/java")
@@ -114,7 +110,7 @@ public class CodeGenerator {
 	/**
 	 * 数据源配置
 	 */
-	public static DataSourceConfig buildDataSource() {
+	private static DataSourceConfig buildDataSource() {
 		return new DataSourceConfig().setDbType(DbType.MYSQL).setDriverName("com.mysql.cj.jdbc.Driver")
 				.setUsername("root").setPassword("password")
 				.setUrl("jdbc:mysql://localhost:3306/pompey-upms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true&useSSL=false");
@@ -123,7 +119,7 @@ public class CodeGenerator {
 	/**
 	 * 建立包配置
 	 */
-	public static PackageConfig buildPackageInfo() {
+	private static PackageConfig buildPackageInfo() {
 		moduleName = scanner("模块名");
 		return new PackageConfig().setModuleName(moduleName).setParent(PACKAGEPATH).setController("controller");
 	}
@@ -142,11 +138,11 @@ public class CodeGenerator {
 	 * .setEntityBooleanColumnRemoveIsPrefix(true) //Boolean类型字段是否移除is前缀处理
 	 * .setRestControllerStyle(true) .setControllerMappingHyphenStyle(true)
 	 */
-	public static StrategyConfig buildStrategy() {
+	private static StrategyConfig buildStrategy() {
 		String tables = scanner("表名(多个英文逗号分割,全部 all)");
 		StrategyConfig strategyConfig = new StrategyConfig();
 		// 此处可以修改为您的表前缀
-		strategyConfig.setTablePrefix(new String[] { "sys_" })
+		strategyConfig.setTablePrefix("sys_")
 				// 表名生成策略
 				.setNaming(NamingStrategy.underline_to_camel)
 				// 自定义实体父类
@@ -154,6 +150,7 @@ public class CodeGenerator {
 				// 自定义实体，公共字段
 				.setSuperEntityColumns(superEntityColumns);
 
+		String ALL = "all";
 		if (!ALL.equalsIgnoreCase(tables)) {
 			// 需要生成哪些表
 			strategyConfig.setInclude(tables.split(","));
@@ -166,7 +163,7 @@ public class CodeGenerator {
 	/**
 	 * 自定义配置及文件输出配置
 	 */
-	public static InjectionConfig buildCfg() {
+	private static InjectionConfig buildCfg() {
 		// 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
 		return new InjectionConfig() {
 			@Override
@@ -195,7 +192,7 @@ public class CodeGenerator {
 	 * .setEntity("...") .setMapper("...") .setXml("...") .setService("...")
 	 * .setServiceImpl("...")
 	 */
-	public static TemplateConfig buildTemplate() {
+	private static TemplateConfig buildTemplate() {
 		// 关闭默认 xml 生成，调整生成 至 根目录
 		return new TemplateConfig().setXml(null);
 	}

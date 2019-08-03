@@ -24,7 +24,7 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>DEBUG</level>
+            <level>ALL</level>
         </filter>
         <encoder>
             <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
@@ -170,9 +170,16 @@
 
     <!--开发环境:打印控制台-->
     <springProfile name="dev">
-        <logger name="com.pompey.upms" level="DEBUG"/>
-        <logger name="org.apache.ibatis" level="DEBUG" />
-   		<logger name="java.sql" level="DEBUG" />
+        <logger name="com.pompey.upms" level="ALL"/>
+        <logger name="org.apache.ibatis" level="ALL" />
+   		<logger name="java.sql" level="ALL" />
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="DEBUG_FILE" />
+            <appender-ref ref="INFO_FILE" />
+            <appender-ref ref="ERROR_FILE" />
+            <appender-ref ref="WARN_FILE" />
+        </root>
     </springProfile>
 
     <root level="info">

@@ -32,9 +32,12 @@ public class ShardingDataSourceConfig {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ShardingDataSourceConfig.class);
 	
-	@Autowired(required = false)
-	private ShardingMasterSlaveConfig shardingMasterSlaveConfig;
-	
+	private final ShardingMasterSlaveConfig shardingMasterSlaveConfig;
+
+	public ShardingDataSourceConfig(ShardingMasterSlaveConfig shardingMasterSlaveConfig) {
+		this.shardingMasterSlaveConfig = shardingMasterSlaveConfig;
+	}
+
 	/**
 	 * 配置数据源
 	 * @throws SQLException 

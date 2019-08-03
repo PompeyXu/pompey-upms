@@ -16,7 +16,7 @@ import lombok.Data;
  * @date 2019-04-10 23:15
  */
 @Data
-public abstract class BaseVo<T> implements java.io.Serializable {
+public class BaseVo<T> implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 

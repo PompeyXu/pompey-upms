@@ -5,8 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.pompey.upms.common.base.BaseVo;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

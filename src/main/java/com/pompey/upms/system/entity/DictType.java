@@ -6,11 +6,13 @@ import com.pompey.upms.common.base.BaseVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author PompeyXu
  * @date 2019-04-11 23:18:44  
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @ApiModel("字典类型表")
 @TableName(value = "sys_dict_type")

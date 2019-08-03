@@ -14,7 +14,6 @@ import com.pompey.upms.system.service.IOrganizationService;
  * @date 2019-04-11 23:30:06  
  */
 @Service
-public class OrganizationServiceImpl extends ServiceImpl<OrganizationMapper, Organization>
-		implements IOrganizationService {
+public class OrganizationServiceImpl extends ServiceImpl<OrganizationMapper, Organization> implements IOrganizationService {
 
 }

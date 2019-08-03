@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 上下文获取类
  * 
@@ -18,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class ApplicationContextHolder implements ApplicationContextAware {
 
 	private static final Map<String, Object> SERVICE_FACTORY = new HashMap<>();
-	static ApplicationContext applicationContext;
+	private static ApplicationContext applicationContext;
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -32,7 +34,7 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         return applicationContext;
     }
 
-	public static <T> T getBean(Class<T> t) {
+	private static <T> T getBean(Class<T> t) {
 		return applicationContext.getBean(t);
 	}
 
@@ -44,8 +46,7 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 		return applicationContext.getBean(name);
 	}
 
-	@SuppressWarnings("unchecked")
-	public static <T> T getService(Class<T> cls) {
+	public static <T> T getService(@NotNull Class<T> cls) {
 		String clsName = cls.getName();
 		T service = (T) SERVICE_FACTORY.get(clsName);
 		if (service == null) {

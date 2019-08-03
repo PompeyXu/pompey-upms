@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import com.alibaba.druid.pool.DruidDataSource;
 
 import io.shardingsphere.api.config.rule.MasterSlaveRuleConfiguration;
+import org.springframework.stereotype.Component;
 
 /**
  * 数据源配置读取

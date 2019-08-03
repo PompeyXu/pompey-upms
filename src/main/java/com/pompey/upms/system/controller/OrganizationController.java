@@ -18,7 +18,6 @@ import com.pompey.upms.system.service.impl.OrganizationServiceImpl;
 import io.swagger.annotations.Api;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 

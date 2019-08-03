@@ -21,7 +21,7 @@ public class ClassUtil {
      * @Param [cls, fieldName]
      * @return java.lang.Object
      **/
-    public static Object getAttributeValue(Object obj, String fieldName){
+    static Object getAttributeValue(Object obj, String fieldName){
         Object invoke = null;
         Method[] methods = obj.getClass().getMethods();
         Optional<Method> optionslMethod = Arrays.stream(methods).filter(x -> ("get" + fieldName).equalsIgnoreCase(x.getName())).findFirst();

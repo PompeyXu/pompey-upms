@@ -6,11 +6,13 @@ import com.pompey.upms.common.base.BaseVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author PompeyXu
  * @date 2019-04-11 23:17:39  
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @ApiModel("角色表")
 @TableName(value = "sys_role")
